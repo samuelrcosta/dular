@@ -1,0 +1,50 @@
+.container-login{
+}
+h2{
+    color: #000;
+    float: left;
+    margin-top: 15px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 38px;
+    margin-left: 15px;
+}
+.btnentrar{
+    background-color: #1E90FF;
+    border-color: #1E90FF;
+}
+
+.btnentrar:hover {
+    background-color: #4682B4;
+    border-color: #4682B4;
+}
+#caixa{
+    height: 400px;
+    width: 450px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 300px;
+}
+
+@media only screen and (max-width: 380px) {
+    #caixa{
+        max-width: 330px;
+        margin-left: -165px;
+        transform: translate(-00%, -50%);
+        min-width: 0;
+    }
+}
+@media only screen and (max-width: 330px) {
+    #caixa{
+        max-width: 280px;
+        margin-left: -140px;
+    }
+}
+.btn{
+    cursor: pointer;
+}
+.loading{
+    display: none;
+    float: right;
+}
