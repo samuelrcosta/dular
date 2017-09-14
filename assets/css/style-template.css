@@ -1,0 +1,59 @@
+body{
+    font-family: Hind,sans-serif;;
+}
+
+.topo-topo{
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    background-color: #ccc;
+    color: black;
+}
+
+.topo-topo-right{
+    float: right;
+    font-weight: 600;
+}
+
+.fixed-top {
+    top: 35px;
+}
+
+.topo{
+    height: 90px;
+}
+
+#nav-link{
+    color: white;
+}
+
+#nav-link:hover{
+    background-color: yellow;
+    color: black;
+}
+
+.footer{
+    width: 100%;
+    background-color: #292b2c;
+    color: white;
+    bottom: 0;
+    border-top: solid 2px orange;
+}
+
+.rodape{
+    border-top: solid 1px orange;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.rodape p,a{
+    margin: 10px 20px;
+    color: #fff;
+}
+
+.footer .container{
+    line-height: 18px;
+    margin-top: 5px;
+    display: block;
+}
