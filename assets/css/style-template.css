@@ -20,15 +20,19 @@ body{
 }
 
 .topo{
-    height: 90px;
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    border-bottom: solid 1px #FDF21C;
 }
 
 #nav-link{
-    color: white;
+    color: black;
+    font-weight: 600;
 }
 
 #nav-link:hover{
-    background-color: yellow;
+    background-color: #FDF21C;
     color: black;
 }
 
@@ -38,11 +42,11 @@ body{
     background-color: #292b2c;
     color: white;
     bottom: 0;
-    border-top: solid 2px orange;
+    border-top: solid 2px #FDF21C;
 }
 
 .rodape{
-    border-top: solid 1px orange;
+    border-top: solid 1px #FDF21C;
     padding: 10px;
     text-align: center;
     font-size: 14px;

@@ -4,6 +4,7 @@ class Usuarios extends model{
     private $nome;
     private $senha;
     private $email;
+    private $foto;
     private $permissao;
 
     public function cadastrar($nome, $email, $senha, $permissao){
@@ -45,6 +46,7 @@ class Usuarios extends model{
             $this->senha = $data['senha'];
             $this->nome = $data['nome'];
             $this->permissao = $data['permissao'];
+            $this->foto = $data['url'];
             $this->id = $data['id'];
         }
     }
@@ -72,6 +74,16 @@ class Usuarios extends model{
     public function setPermissao($permissao)
     {
         $this->permissao = $permissao;
+    }
+
+    public function getFoto(){
+        echo $this->foto;
+    }
+
+    public function getFuncao(){
+        if($this->permissao == '1'){
+            return "Administrador";
+        }
     }
 }
 ?>
