@@ -30,24 +30,50 @@
                 </ul>
             </div>
         </nav>
+        <div class="home-back-img">
         <?php $this->loadViewInTemplate($viewName, $viewData) ?>
         <div class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="footer-logo"></div>
-                        <h5>Onde estamos</h5>
-                        <p>Av. Bernardo Sayão Qd 01 Lt. 19 Residencial Tereza Lima </p>
-                        <h5>Contatos</h5>
-                        <p>(62) 3514-5771<br>
-                            (62) 3514-5771<br>
-                            (62) 3514-5771<br>
-                            dular@dularexovais.com.br</p>
+                        <div class="area-contato-box">
+                            <div class="area-titulo">
+                                <div class="area-titulo-imagem">
+                                    <img src="<?php echo BASE_URL;?>/assets/imgs/location-icon.png" alt="Logo Phone">
+                                </div>
+                                <h5 class="area-titulo-texto">Onde estamos</h5>
+                                <div class="area-descricao">
+                                    Av. Bernardo Sayão Qd 01 Lt. 19<br>Residencial Tereza Lima<br>Inhumas - GO
+                                </div>
+                            </div>
+                        </div>
+                        <div class="area-contato-box" style="margin-top: 25px;margin-bottom: 10px">
+                            <div class="area-titulo">
+                                <div class="area-titulo-imagem">
+                                    <img src="<?php echo BASE_URL;?>/assets/imgs/phone-icon.png" alt="Logo Phone">
+                                </div>
+                                <h5 class="area-titulo-texto">Contatos</h5>
+                                <div class="area-descricao">
+                                    <p>(62) 3514-5771<br>
+                                        dular@dularexovais.com.br</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-9">
-                        <h5>Atendimento</h5>
-                        <p>Segunda a sexta das 8 às 18h<br>
-                            sábado das 8 às 12h</p>
+                    <div class="col-md-7">
+                        <div class="area-contato-box">
+                            <div class="area-titulo">
+                                <div class="area-titulo-imagem">
+                                    <img src="<?php echo BASE_URL;?>/assets/imgs/info-icon.png" alt="Logo Phone">
+                                </div>
+                                <h5 class="area-titulo-texto">Atendimento</h5>
+                                <div class="area-descricao">
+                                    <p>Segunda a sexta das 8 às 18h<br>
+                                        sábado das 8 às 12h</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="rodape">

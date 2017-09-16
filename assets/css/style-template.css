@@ -45,6 +45,30 @@ body{
     border-top: solid 2px #FDF21C;
 }
 
+.area-contato-box{
+    padding-left: 20px;
+    font-size: 15px;
+}
+
+.area-titulo img{
+    width: 32px;
+}
+
+.area-titulo-imagem{
+    height: 32px;
+    line-height: 64px;
+    float: left;
+}
+
+.area-titulo-texto{
+    margin-left: 40px;
+    padding-top: 7px;
+}
+
+.area-descricao{
+    margin-top: 15px;
+}
+
 .rodape{
     border-top: solid 1px #FDF21C;
     padding: 10px;
