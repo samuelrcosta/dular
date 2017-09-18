@@ -2,7 +2,7 @@
 <div class="container-login">
         <form method="POST" style="margin-top: 20px">
             <div id="caixa" class="form-group">
-                <img style="margin-bottom: 15px;float: left;width: 100px" src="assets/imgs/logo.png"/><h2>Acesso seguro</h2>
+                <img style="margin-top: 15px;float: left;width: 100px" src="assets/imgs/logo.png"/><h2>Acesso seguro</h2>
                 <div class="form-group">
                     <input onKeyPress="teclarTeclado();" type="text" name="email" placeholder="Digite seu email" id="email" class="form-control">
                 </div>

@@ -3,7 +3,7 @@
         <title><?php echo $titulo ?></title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="<?php echo BASE_URL;?>/assets/imgs/logo.png" type="image/png" />
+        <link rel="shortcut icon" href="<?php echo BASE_URL;?>/assets/imgs/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>/assets/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>/assets/css/style-template.css">
         <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/tether.min.js"></script>

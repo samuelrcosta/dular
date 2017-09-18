@@ -81,6 +81,10 @@ body{
     color: #fff;
 }
 
+.rodape a:hover{
+    color: #FDF21C;
+}
+
 .footer .container{
     line-height: 18px;
     margin-top: 5px;

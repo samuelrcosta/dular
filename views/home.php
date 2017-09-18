@@ -12,18 +12,18 @@
     <div class="row imagens-modelo" style="text-align: center">
         <div class="col-md-6" style="padding-left: 8%;">
             <div class="div-img-modelo" id="img-cama" style="margin-bottom: 40px">
-                <span><a href="<?php echo BASE_URL;?>/produtos/caterogia/cama">Cama</a></span>
+                <span><a href="<?php echo BASE_URL;?>/produtos/categoria/cama">Cama</a></span>
             </div>
             <div class="div-img-modelo" id="img-mesa">
-                <span><a href="<?php echo BASE_URL;?>/produtos/caterogia/mesa">Mesa</a></span>
+                <span><a href="<?php echo BASE_URL;?>/produtos/categoria/mesa">Mesa</a></span>
             </div>
         </div>
         <div  class="col-md-6" style="padding-right: 8%;">
             <div class="div-img-modelo" id="img-banho" style="margin-bottom: 40px">
-                <span><a href="<?php echo BASE_URL;?>/produtos/caterogia/banho">Banho</a></span>
+                <span><a href="<?php echo BASE_URL;?>/produtos/categoria/banho">Banho</a></span>
             </div>
             <div class="div-img-modelo" id="img-decoracao">
-                <span><a href="<?php echo BASE_URL;?>/produtos/caterogia/decoracao">Decoração</a></span>
+                <span><a href="<?php echo BASE_URL;?>/produtos/categoria/decoracao">Decoração</a></span>
             </div>
         </div>
     </div>
