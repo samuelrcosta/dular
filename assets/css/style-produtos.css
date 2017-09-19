@@ -42,15 +42,15 @@
 
 .menu-ex-categorias{
     width: 100%;
-    background-color: #FDF21C;
+    background-color: #292b2c;
 }
 
 .menu-categorias{
     list-style: none;
-    width: 600px;
+    width: 550px;
     margin: auto;
-    height: 75px;
-    line-height: 75px;
+    height: 50px;
+    line-height: 50px;
     overflow: hidden;
     align-content: center;
     padding: 0;
@@ -72,7 +72,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    color: black;
+    color: white;
     margin: 0;
 }
 
@@ -83,11 +83,15 @@
 
 .menu-categorias li div{
     float: left;
-    padding: 10px;
-    margin-top: 12px;
+    padding: 8px;
+    margin-top: 6px;
     margin-right: 5px;
-    background-color: #FDF21C;
+    background-color: #292b2c;
     border-radius: 26px;
+}
+
+.menu-categorias li div img{
+    width: 25px;
 }
 
 .menu-categorias li p{

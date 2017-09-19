@@ -79,7 +79,7 @@ function redimensionar()
 
         // Salvando imagem no servidor
         var id = atob(atob($("#progresso").attr("data-id")));
-        $.post(BASE_URL+'/home/salvarFoto', {id:id, imagem: imagem}, function(get_retorno) {
+        $.post(BASE_URL+'/produtosCMS/salvarFoto', {id:id, imagem: imagem}, function(get_retorno) {
 
             // Definindo porcentagem
             var porcentagem = (imagem_atual + 1) / imagens.length * 100;

@@ -8,11 +8,11 @@ if(ENVIRONMENT == 'development'){
     $config['dbuser'] = 'root';
     $config['dbpass'] = 'root';
 } else{
-    define("BASE_URL", 'http://halfpet.com/mvc');
-    $config['dbname'] = 'id880758_teste123';
+    define("BASE_URL", 'https://halfpet.com.br/dular');
+    $config['dbname'] = 'ogopbuse_dular';
     $config['host'] = 'localhost';
-    $config['dbuser'] = 'id880758_samuel';
-    $config['dbpass'] = 'costa123';
+    $config['dbuser'] = 'ogopbuse_root';
+    $config['dbpass'] = 'Costa_123';
 }
 
 global $db;
