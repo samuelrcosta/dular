@@ -77,7 +77,7 @@ class Usuarios extends model{
     }
 
     public function getFoto(){
-        echo $this->foto;
+        return $this->foto;
     }
 
     public function getFuncao(){

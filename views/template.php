@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="<?php echo BASE_URL;?>/assets/imgs/favicon.ico" />
+        <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/jquery-3.2.1.min.js"></script>
         <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>/assets/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>/assets/css/style-template.css">
         <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/tether.min.js"></script>
@@ -78,11 +79,10 @@
                 </div>
                 <div class="rodape">
                     <a href="<?php echo BASE_URL;?>/contato">Entre em contato</a> - <a href="<?php echo BASE_URL;?>/login">Acesso restrito</a></p>
-                    <p style="margin-bottom: 0;">2017 ® DuLar Enxovais - Todos os direitos reservados</p>
+                    <p style="margin-bottom: 0;">2017 ® Exovais DuLar - Todos os direitos reservados</p>
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/canvas-to-blob.min.js"></script>
         <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/resize.js"></script>

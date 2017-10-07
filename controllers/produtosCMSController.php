@@ -34,8 +34,23 @@ class produtosCMSController extends controller{
             $nome = addslashes($_POST['nome']);
             $categoria = addslashes($_POST['categoria']);
             $descricao = addslashes($_POST['descricao']);
+            if(isset($_POST['tags1']) && !empty($_POST['tags1'])){
+                $tags1 = addslashes($_POST['tags1']);
+            }else{
+                $tags1 = "null";
+            }
+            if(isset($_POST['tags2']) && !empty($_POST['tags2'])){
+                $tags2 = addslashes($_POST['tags2']);
+            }else{
+                $tags2 = "null";
+            }
+            if(isset($_POST['tags3']) && !empty($_POST['tags3'])){
+                $tags3 = addslashes($_POST['tags3']);
+            }else{
+                $tags3 = "null";
+            }
             if($nome != '' || $categoria != ''){
-                $p->addProduto($nome, $categoria, $descricao);
+                $p->addProduto($nome, $categoria, $descricao, $tags1, $tags2, $tags3);
                 header("Location: ".BASE_URL."/produtosCMS");
             }else{
                 echo "<div class='alert alert-danger'>Preencha Nome e a Descrição</div>";
@@ -43,6 +58,9 @@ class produtosCMSController extends controller{
         }
         $c = new Categorias();
         $dados['cats'] = $c->getLista();
+        $dados['tags1'] = $c->getTags(1);
+        $dados['tags2'] = $c->getTags(2);
+        $dados['tags3'] = $c->getTags(3);
         $this->loadTemplateCMS('addProdutoCMS', $dados);
     }
 
@@ -65,8 +83,23 @@ class produtosCMSController extends controller{
             $descricao = addslashes($_POST['descricao']);
             $id = base64_decode(base64_decode(addslashes($id)));
 
+            if(isset($_POST['tags1']) && !empty($_POST['tags1'])){
+                $tags1 = addslashes($_POST['tags1']);
+            }else{
+                $tags1 = "null";
+            }
+            if(isset($_POST['tags2']) && !empty($_POST['tags2'])){
+                $tags2 = addslashes($_POST['tags2']);
+            }else{
+                $tags2 = "null";
+            }
+            if(isset($_POST['tags3']) && !empty($_POST['tags3'])){
+                $tags3 = addslashes($_POST['tags3']);
+            }else{
+                $tags3 = "null";
+            }
 
-            $p->editarProduto($nome, $categoria, $descricao, $id);
+            $p->editarProduto($nome, $categoria, $descricao, $id, $tags1, $tags2, $tags3);
             header("Location: ".BASE_URL."/produtosCMS");
         }
         if(isset($id) && !empty($id)){
@@ -76,6 +109,9 @@ class produtosCMSController extends controller{
         }
         $c = new Categorias();
         $dados['cats'] = $c->getLista();
+        $dados['tags1'] = $c->getTags(1);
+        $dados['tags2'] = $c->getTags(2);
+        $dados['tags3'] = $c->getTags(3);
         $this->loadTemplateCMS('editarProdutoCMS', $dados);
     }
     public function salvarFoto(){
@@ -88,28 +124,28 @@ class produtosCMSController extends controller{
             header("Location: ".BASE_URL."/login");
             exit;
         }
-        $id_anuncio = new Anuncios();
+        $p = new Produtos();
         if(isset($id) && !empty($id)){
-            $id_anuncio = $id_anuncio->excluirFoto(base64_decode(base64_decode(addslashes($id))));
+            $p = $p->excluirFoto(base64_decode(base64_decode(addslashes($id))));
         }
 
-        if(isset($id_anuncio)){
-            header ("Location: ".BASE_URL."/home/editarAnuncio/".base64_encode(base64_encode($id_anuncio))."");
+        if(isset($p)){
+            header ("Location: ".BASE_URL."/produtosCMS/editarProduto/".base64_encode(base64_encode($p))."");
         }else{
-            header("Location: ".BASE_URL."home/meusAnuncios");
+            header("Location: ".BASE_URL."/produtosCMS");
         }
     }
 
-    public function excluirAnuncio($id){
+    public function excluirProduto($id){
         if(!isset($_SESSION['cLogin']) || empty($_SESSION['cLogin'])){
             header("Location: ".BASE_URL."/login");
             exit;
         }
-        $a = new Anuncios();
+        $p = new Produtos();
         if(isset($id) && !empty($id)){
-            $a->excluirAnuncio(base64_decode(base64_decode(addslashes($id))));
+            $p->excluirProduto(base64_decode(base64_decode(addslashes($id))));
         }
-        header("Location: ".BASE_URL."/home/meusAnuncios");
+        header("Location: ".BASE_URL."/produtosCMS");
     }
 
 }

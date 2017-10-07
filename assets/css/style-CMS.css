@@ -18,6 +18,11 @@ h1 {
 h2 {
     font-size:24px;
 }
+
+.mce-notification-warning{
+    display: none;
+}
+
 .main {
     height:300px;
     margin-left:180px;
@@ -114,15 +119,21 @@ menu li:nth-child(2) {
     background-image:url('../imgs/four-black-squares.png');
 }
 menu li:nth-child(3) {
-    background-image:url('../imgs/speech-bubbles-comment-option.png');
+    background-image:url('../imgs/logo-produtos.png');
 }
 menu li:nth-child(4) {
-    background-image:url('../imgs/user-shape.png');
+    background-image:url('../imgs/logo-revendedores.png');
 }
 menu li:nth-child(5) {
-    background-image:url('../imgs/settings.png');
+    background-image:url('../imgs/logo-contatos.png');
 }
 menu li:nth-child(6) {
+    background-image:url('../imgs/user-shape.png');
+}
+menu li:nth-child(7) {
+    background-image:url('../imgs/settings.png');
+}
+menu li:nth-child(8) {
     background-image:url('../imgs/sign-out-option.png');
 }
 
@@ -345,7 +356,7 @@ menu li:nth-child(6) {
 .discussion_item {
     background-color:#f7f7f7;
     border:1px solid #c4c4c4;
-    height:100px;
+    height: 85px;
     transition: all 0.5s;
     overflow: hidden;
 }
@@ -408,7 +419,7 @@ menu li:nth-child(6) {
     margin:12px;
     text-align: center;
     padding-top:10px;
-    margin-top: 27.5px;
+    margin-top: 18px;
 }
 
 .dis-numero{
@@ -442,7 +453,7 @@ menu li:nth-child(6) {
     font-size:12px;
     font-weight: bold;
     border-radius: 4px;
-    width: 86.05px;
+    width: 130px;
     text-align: center;
 }
 
@@ -456,7 +467,7 @@ menu li:nth-child(6) {
     font-weight: bold;
     border-radius: 4px;
     margin-left: 7px;
-    width: 89.38px;
+    width: 130px;
     text-align: center;
 }
 

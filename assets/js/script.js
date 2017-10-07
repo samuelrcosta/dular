@@ -122,17 +122,32 @@ function validar(){
 
 function validaForm(){
     var input = $('input');
+    var textarea = $('textarea');
     var primeiro = 0;
     for(i = 0; i < input.length; i++){
         var text = input[i];
         if(text.getAttribute('data-ob') == "1" && text.value == ''){
-            msg = msg+'<li class="list-group-item">O campo ' + text.getAttribute('data-alt') + ' é obrigatório</li>';
+            msg = msg+'<li class="list-group-item list-group-item-danger">O campo ' + text.getAttribute('data-alt') + ' é obrigatório</li>';
+            primeiro = 1;
+        }
+    }
+    for(i = 0; i < textarea.length; i++){
+        var text = textarea[i];
+        if(text.getAttribute('data-ob') == "1" && text.value == ''){
+            msg = msg+'<li class="list-group-item list-group-item-danger">O campo ' + text.getAttribute('data-alt') + ' é obrigatório</li>';
             primeiro = 1;
         }
     }
     if($("#email").val() != null && $("#email").val() != ''){
         if(validaEmail($("#email").val())){
-            msg = msg+'<li class="list-group-item">E-mail inválido</li>';
+            msg = msg+'<li class="list-group-item list-group-item-danger">E-mail inválido</li>';
+            primeiro = 1;
+        }
+    }
+    if($("#cpf").val() != null && $("#cpf").val() != ''){
+        var cpf = $("#cpf").val().replace(/\D+/g, '');
+        if(!validaCPF(cpf)){
+            msg = msg+'<li class="list-group-item list-group-item-danger">CPF inválido</li>';
             primeiro = 1;
         }
     }
@@ -164,36 +179,24 @@ function validaEmail(text) {
         return -1;
     }
 }
-function resizeTela() {
-    var footerHeight = 0,
-        footerTop = 0,
-        $footer = $(".footer");
 
-    positionFooter();
+function validaCPF(strCPF) {
+    var Soma;
+    var Resto;
+    Soma = 0;
+    if (strCPF == "00000000000") return false;
 
-    function positionFooter() {
-        footerHeight = $footer.height();
-        footerTop = ($(window).scrollTop()+$(window).height()-footerHeight)+"px";
+    for (i=1; i<=9; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (11 - i);
+    Resto = (Soma * 10) % 11;
 
-        if ( ($(document.body).height()+footerHeight) < $(window).height()) {
-            $footer.css({
-                position: "absolute"
-            })
-        } else {
-            $footer.css({
-                position: "static"
-            })
-        }
-    }
+    if ((Resto == 10) || (Resto == 11))  Resto = 0;
+    if (Resto != parseInt(strCPF.substring(9, 10)) ) return false;
 
-    $(window)
-        .resize(positionFooter)
+    Soma = 0;
+    for (i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (12 - i);
+    Resto = (Soma * 10) % 11;
+
+    if ((Resto == 10) || (Resto == 11))  Resto = 0;
+    if (Resto != parseInt(strCPF.substring(10, 11) ) ) return false;
+    return true;
 }
-
-window.onload = function(){
-    resizeTela();
-};
-
-window.onresize = function(){
-    resizeTela();
-};

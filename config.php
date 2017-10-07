@@ -15,6 +15,20 @@ if(ENVIRONMENT == 'development'){
     $config['dbpass'] = 'Costa_123';
 }
 
+global $MailHost;
+global $MailPort;
+global $MailUsername;
+global $MailPassword;
+global $MailName;
+$MailHost = "smtp.gmail.com";
+$MailPort = "465";
+$MailUsername = "samu.rcosta@gmail.com";
+$MailPassword = "samukinha";
+$MailName = "Samuel Costa";
+
+
+
+
 global $db;
 try {
     $db = new PDO("mysql:dbname=".$config['dbname'].";host=".$config['host'].";charset=utf8", $config['dbuser'], $config['dbpass']);

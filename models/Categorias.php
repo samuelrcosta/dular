@@ -9,4 +9,15 @@ class Categorias extends model{
         }
         return $array;
     }
+
+    public function getTags($nivel){
+        $array = array();
+        $sql = $this->db->prepare("SELECT * FROM tag_name WHERE nivel = ?");
+        $sql->execute(array($nivel));
+        $sql = $sql->fetchAll();
+        if($sql && count($sql)){
+            return $sql;
+        }
+        return $array;
+    }
 }
