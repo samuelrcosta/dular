@@ -1,0 +1,6 @@
+{
+  "require": {
+    "kriansa/openboleto": "v1.0",
+    "andersondanilo/cnab_php": "1.3.*"
+  }
+}
