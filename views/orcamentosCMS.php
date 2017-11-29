@@ -4,7 +4,7 @@
     }
 </style>
 <div class="container main">
-    <h1>Orçamentos (<?php echo count($orcamentos);?> de <?php echo $totalOrcamentos;?>)</h1>
+    <h1>OrçamentosSS (<?php echo count($orcamentos);?> de <?php echo $totalOrcamentos;?>)</h1>
     <div class="discussionarea">
         <div class="row">
             <div class="col-sm-9">
