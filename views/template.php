@@ -66,7 +66,7 @@
                                 <h5 class="area-titulo-texto">Contatos</h5>
                                 <div class="area-descricao">
                                     <p>(62) 3514-5771<br>
-                                        dular@dularexovais.com.br<br>
+                                        dular@dularenxovais.com.br<br>
                                         <a href="https://www.facebook.com/jorliane/" style="margin: 0;" target="_blank"><img style="margin-top: 5px" src="<?php echo BASE_URL;?>/assets/imgs/facebook.png" alt="Logo Facebook"></a></p>
                                 </div>
                             </div>
