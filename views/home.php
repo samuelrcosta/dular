@@ -17,6 +17,9 @@
         <div id="botao-transparente"><a href="<?php echo BASE_URL;?>/revendedor">Conheça</a></div>
         <div id="div-branca"></div>
     </div>
+    <div style="float: right;margin-top: 115px;margin-right: 10px;">
+        Imagens ilustrativas
+    </div>
 </div>
 <div class="container-fluid home-preferencias">
     <h3>Aqui temos o que a sua casa precisa<br>E o que a sua família merece!</h3>

@@ -16,7 +16,7 @@ class produtosController extends controller{
         }
         $totalProdutos = count($produtos);
         $dados = array(
-            'titulo' => 'Produtos',
+            'titulo' => 'Enxovais DuLar - Produtos',
             'produtos' => $produtos,
             'totalProdutos' => $totalProdutos,
             'returnName' => $returnName,

@@ -47,9 +47,9 @@
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <h3>Descrição</h3>
-                    <div>
-                      <?php echo $produto['descricao']?>
+                    <h3 style="margin-top: 15px">Descrição</h3>
+                    <div style="white-space: pre-line">
+                        <?php echo $produto['descricao']?>
                     </div>
                 </div>
             </div>
