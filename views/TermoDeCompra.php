@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>/assets/css/<?php echo $css;?>.css">
 <style>
     .home-back-img{
-        background-image: url("../../assets/imgs/fundo.jpg");
+        background-image: url("assets/imgs/fundo.jpg");
         background-repeat: no-repeat;
         background-position: center;
         height: 155px;
