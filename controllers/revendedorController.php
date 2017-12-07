@@ -20,10 +20,10 @@ class revendedorController extends controller{
             $r->cadastrar($nome, $cpf, $rg, $celular, $telefone, $email, $endereco, $bairro, $cidade, $cep, $estado);
             $assunto = "Novo revendedor cadastrado no site";
             $mensagem = "Nome: ".$nome."<br>"."E-mail: ".$email;
-            $r->enviarEmailComTemplate($this->MailName, $this->MailUsername, $assunto, $mensagem);
+            $r->enviarEmail($this->MailName, $this->MailUsername, $assunto, $mensagem);
             $assunto = "Recebemos seu contato - Enxovais DuLar";
             $msg = "Olá ".$nome."<br>Recebemos seu contato para revenda.<br>Iremos analisar e responderemos o mais rápido possível.";
-            $r->enviarEmailComTemplate($nome, $email, $assunto, $msg);
+            $r->enviarEmail($nome, $email, $assunto, $msg);
             header("Location: ".BASE_URL."/revendedor/sucesso/".$nome);
         }
         $dados = array(
