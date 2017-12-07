@@ -45,8 +45,8 @@
     }
 </style>
 <div class="main">
-    <button class="btn btn-primary" style="margin-bottom: 10px;cursor: pointer" onclick="location.href = '<?php echo BASE_URL ?>/orcamentosCMS/abrir/<?php echo base64_encode(base64_encode($dadosOrcamento['id'])) ?>'">Voltar</button>
-    <button class="btn btn-danger botao2" style="margin-bottom: 10px;cursor: pointer" id="excluir">Excluir</button>
+    <button class="btn btn-primary" style="margin-bottom: 10px;cursor: pointer" onclick="location.href = '<?php echo BASE_URL ?>/orcamentosCMS/abrir/<?php echo base64_encode(base64_encode($dadosOrcamento['id'])) ?>'"><img style="margin-right: 5px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACGSURBVEhLYxiZ4P////z//v0LgXKpD6AWnAJiEEiCClMPwCwA0iDwAcg2gUpRBwANpZ8FQPr9qAUYYHhZAAJA9k4g1UEBboAajQBAQ6cBJagJPkCNRgCgIO19AgJACdrGCQyMWkQ2GBCLgID6pTAMAA2nr0VADALUrxlhAGoR7er4QQ4YGAD5xQxMLz1UIwAAAABJRU5ErkJggg=="> Voltar</button>
+    <button class="btn btn-danger botao2" style="margin-bottom: 10px;cursor: pointer" id="excluir"><img style="margin-right: 5px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHVSURBVEhL7ZS7SgNhFITjpfEWQcFYiJeIoGKhRC1EFCwUtRbLPEEqn8BOfAGx8I538BETvznMFlkTdqMWFg4M55z5Z/5d/z9r4c+hXq+PNhqNsqql3wUbb8BnHnJGfdHspe+DTQ7Z8JZ6aT7CO/eqmpO1G3joaDYwr8Nj+ADnkuMR3bfUoPzKrXmr1sCwIDPBI+oUVHgGasMR9+20KeeUn/eWX8HiMKYn+AGTo+iEyilf9JbtwcNu3XaEjnK8yZ3rFsH+EA20pgtm7oPb7iOXC5ivXVfhSIgG877bALPuJi6bGrlcwHzvOgaHQjSYZ90GmIvyuY9cLmC+gDqGEmy6ROYFtwGtc6Tj9l9YzgbmU6ifpL6B9KYHbgN45tFm5YenlrOBuQZX9YawYjmAnn5IBU1/se6vZjkbBPVR7VMHqSuWA2ibbgPMy3gG7D+ynA0CO7BKqIs6YTmANuk2wLqOVb6qcpazgXkJnhDuhU3HxZz+Syryya+c5Wxg1hmfu98L0WBuuhPm+G7kh6UQ84A36yFwpZ6a/sLbPeRKuRDzglDy1S+GYDCnf9Kxnvg7AqF33kwXOmMpgFZ2G2Ceht3wzVJ+sPkefIWt/qWnKd+uo//4CQqFT0nmeWbSQNtVAAAAAElFTkSuQmCC"> Excluir</button>
     <div class="box">
         <div class="box-title" data-n="<?php echo $dadosOrcamento['id'] ?>"><h3>Alterando Orçamento</h3></div>
         <div class="box-body">
@@ -91,16 +91,53 @@
                                     <?php
                                     if($dadosOrcamento['status_pag'] == '1' || $dadosOrcamento['status_pag'] == 1)
                                         echo "<option value='1' selected>Em aberto</option>
-                                                <option value='2'>Processando / Comprovante Enviado</option>
-                                                <option value='3'>Confirmado</option>";
+                                                <option value='2'>Comprovante Enviado</option>
+                                                <option value='3'>Boleto Solicitado</option>
+                                                <option value='4'>Boleto Enviado</option>
+                                                <option value='5'>Confirmado</option>";
                                     if($dadosOrcamento['status_pag'] == '2' || $dadosOrcamento['status_pag'] == 2)
                                         echo "<option value='1'>Em aberto</option>
-                                                <option value='2' selected>Processando / Comprovante Enviado</option>
-                                                <option value='3'>Confirmado</option>";
+                                               <option value='2' selected>Comprovante Enviado</option>
+                                                <option value='3'>Boleto Solicitado</option>
+                                                <option value='4'>Boleto Enviado</option>
+                                                <option value='5'>Confirmado</option>";
                                     if($dadosOrcamento['status_pag'] == '3' || $dadosOrcamento['status_pag'] == 3)
                                         echo "<option value='1'>Em aberto</option>
-                                                <option value='2'>Processando / Comprovante Enviado</option>
-                                                <option value='3' selected>Confirmado</option>";
+                                                <option value='2'>Comprovante Enviado</option>
+                                                <option value='3' selected>Boleto Solicitado</option>
+                                                <option value='4'>Boleto Enviado</option>
+                                                <option value='5'>Confirmado</option>";
+                                    if($dadosOrcamento['status_pag'] == '4' || $dadosOrcamento['status_pag'] == 4)
+                                        echo "<option value='1'>Em aberto</option>
+                                                <option value='2'>Comprovante Enviado</option>
+                                                <option value='3'>Boleto Solicitado</option>
+                                                <option value='4' selected>Boleto Enviado</option>
+                                                <option value='5'>Confirmado</option>";
+                                    if($dadosOrcamento['status_pag'] == '5' || $dadosOrcamento['status_pag'] == 5)
+                                        echo "<option value='1'>Em aberto</option>
+                                                <option value='2'>Comprovante Enviado</option>
+                                                <option value='3'>Boleto Solicitado</option>
+                                                <option value='4'>Boleto Enviado</option>
+                                                <option value='5' selected>Confirmado</option>";
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label><span class="obrigatorio">*</span>Tipo do Pagamento:</label>
+                                <select class="form-control" id="tipo_pagamento" name="tipo_pagamento" data-alt="Tipo do Pagamento" data-ob="1">
+                                    <?php
+                                    if($dadosOrcamento['tipo_pagamento'] == '1' || $dadosOrcamento['tipo_pagamento'] == 1)
+                                        echo "<option value='1' selected>Não escolhido ainda</option>
+                                                <option value='2'>Boleto Bancário</option>
+                                                <option value='3'>Depósito Bancário</option>";
+                                    if($dadosOrcamento['tipo_pagamento'] == '2' || $dadosOrcamento['tipo_pagamento'] == 2)
+                                        echo "<option value='1'>Não escolhido ainda</option>
+                                                <option value='2' selected>Boleto Bancário</option>
+                                                <option value='3'>Depósito Bancário</option>";
+                                    if($dadosOrcamento['tipo_pagamento'] == '3' || $dadosOrcamento['tipo_pagamento'] == 3)
+                                        echo "<option value='1'>Não escolhido ainda</option>
+                                                <option value='2'>Boleto Bancário</option>
+                                                <option value='3' selected>Depósito Bancário</option>";
                                     ?>
                                 </select>
                             </div>

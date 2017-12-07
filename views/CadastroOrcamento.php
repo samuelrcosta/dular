@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>/assets/css/<?php echo $css;?>.css">
 <style>
     .home-back-img{
-        background-image: url("../../assets/imgs/fundo.jpg");
+        background-image: url("assets/imgs/fundo.jpg");
         background-repeat: no-repeat;
         background-position: center;
         height: 155px;
@@ -233,7 +233,7 @@
                     <?php echo $_SESSION['msg']; ?>
                 <?php endif;?>
             </div>
-            <p style="font-size: 14px">Ao enviar um orçamento automaticamente estará de acordo com a nossa <a style="color: black;margin: 0;" href="<?php echo BASE_URL;?>/orcamento/TermoDeCompra">Política de Compra e Entrega</a>.</p>
+            <p style="font-size: 14px">Ao enviar um orçamento automaticamente estará de acordo com a nossa <a style="color: black;margin: 0;" target="_blank" href="<?php echo BASE_URL;?>/orcamento/TermoDeCompra">Política de Compra, Venda e Devolução</a>.</p>
             <input id="submit" role="button" type="submit" class="btn-lg btn-success" style="cursor: pointer" value="Enviar">
         </form>
     </div>

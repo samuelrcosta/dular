@@ -32,6 +32,7 @@ class contatoController extends controller{
         $dados = array(
             'titulo' => 'Nos envie uma mensagem de contato',
             'css' => 'style-CadastroContato',
+            'description' => 'Envie uma mensagem para entrar em contato conosco, responderemos o mais breve possível. Qualquer dúvida pode ser enviada nesta página.'
         );
         $this->loadTemplate('CadastroContato', $dados);
     }

@@ -59,7 +59,7 @@
                             <div class="t1 light black-80">
                                 <?php echo $returnName;?></div><!-- /.t1 -->
                             <div class="t2 mt15 black-60">
-                                Produtos para cama casal e solteiro produzidos diretamente da fábrica. Confeccionado com tecidos de alta qualidade.
+                                Produtos para cama casal e solteiro confeccionados com tecidos de alta qualidade produzidos diretamente da fábrica.
                                 <div class="container compartilhar" style="margin-top: 15px">
                                     <h3 style="margin-bottom: 15px"><img style="width: 40px;margin-right: 10px" src="<?php echo BASE_URL ?>/assets/imgs/share.png" alt="Logo compartilhar">Compartilhar</h3>
                                     <div id="share"></div>
@@ -73,7 +73,7 @@
                             <div class="t1 light black-80">
                                 <?php echo $returnName;?></div><!-- /.t1 -->
                             <div class="t2 mt15 black-60">
-                                Produtos para cama casal e solteiro produzidos diretamente da fábrica. Confeccionado com tecidos de alta qualidade.
+                                Produtos para cama casal e solteiro confeccionados com tecidos de alta qualidade produzidos diretamente da fábrica.
                             </div><!-- /.t2 -->
                         </div><!-- /.call -->
                     </div><!-- /.col -->

@@ -29,7 +29,7 @@
                                     &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<img src="<?php echo BASE_URL;?>/assets/imgs/time.png" border="0" width="13" height="13"> em <?php echo date_format(date_create($cont['dt_criacao']), 'd/m/Y \à\s H:i:s');?>
                                 </div>
                                 <div class="dis_author dis_author1">
-                                    <span><strong>Status do Pagamento: <?php if($cont['status_pag'] == "1") echo "Em aberto"; elseif($cont['status_pag'] == "2"){if($cont['tipo_pagamento'] == 3) echo "Comprovante recebido"; else echo "Processando";} elseif($cont['status_pag'] == 3) echo "Confirmado";?></strong></span>
+                                    <span><strong>Status do Pagamento: <?php if($cont['status_pag'] == "1") echo "Em aberto";elseif($cont['status_pag'] == "2") echo "Comprovante Enviado";elseif($cont['status_pag'] == "3") echo "Boleto Solicitado";elseif($cont['status_pag'] == "4") echo "Boleto Enviado";else echo "Confirmado" ?></strong></span>
                                 </div>
                             </div>
                         </div>
@@ -50,8 +50,10 @@
                 <div id='4' class="dis_filtro_item "><a href="<?php echo BASE_URL;?>/orcamentosCMS?filtro=4">Concluído</a></div>
                 <h5 class="tipo-filtro">Status Pagamento: </h5>
                 <div id='1' class="dis_filtro_item "><a href="<?php echo BASE_URL;?>/orcamentosCMS?filtroPag=1">Em aberto</a></div>
-                <div id='2' class="dis_filtro_item "><a href="<?php echo BASE_URL;?>/orcamentosCMS?filtroPag=2">Proces. / Compr. Recebido</a></div>
-                <div id='3' class="dis_filtro_item "><a href="<?php echo BASE_URL;?>/orcamentosCMS?filtroPag=3">Confirmado</a></div>
+                <div id='2' class="dis_filtro_item "><a href="<?php echo BASE_URL;?>/orcamentosCMS?filtroPag=2">Comprovante Recebido</a></div>
+                <div id='3' class="dis_filtro_item "><a href="<?php echo BASE_URL;?>/orcamentosCMS?filtroPag=3">Boleto Solicitado</a></div>
+                <div id='4' class="dis_filtro_item "><a href="<?php echo BASE_URL;?>/orcamentosCMS?filtroPag=4">Boleto Enviado</a></div>
+                <div id='5' class="dis_filtro_item "><a href="<?php echo BASE_URL;?>/orcamentosCMS?filtroPag=5">Confirmado</a></div>
             </div>
         </div>
     </div>

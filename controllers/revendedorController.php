@@ -28,7 +28,8 @@ class revendedorController extends controller{
         }
         $dados = array(
             'titulo' => 'Seja um de nossos revendedores!',
-            'css' => 'style-CadastroRevendedor'
+            'css' => 'style-CadastroRevendedor',
+            'description' => 'Trabalhando com os produtos DuLar o retorno financeiro é certo. Conheça as vantagens e os benefícios de ser um revendedor DuLar, uma grande variedade de produtos com a possibilidade de retorno de até 100% sobre as vendas!'
         );
         $this->loadTemplate('CadastroRevendedor', $dados);
     }

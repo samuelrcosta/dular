@@ -1,6 +1,6 @@
 <div class="container" style="margin-left:180px;padding:30px;transition: all 0.5s;">
     <h1>Editar Produto</h1>
-    <a href="javascript:window.history.go(-1)" class="btn btn-primary" style="margin-top:10px">Voltar</a>
+    <a href="javascript:window.history.go(-1)" class="btn btn-primary" style="margin-top:10px"><img style="margin-right: 5px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACGSURBVEhLYxiZ4P////z//v0LgXKpD6AWnAJiEEiCClMPwCwA0iDwAcg2gUpRBwANpZ8FQPr9qAUYYHhZAAJA9k4g1UEBboAajQBAQ6cBJagJPkCNRgCgIO19AgJACdrGCQyMWkQ2GBCLgID6pTAMAA2nr0VADALUrxlhAGoR7er4QQ4YGAD5xQxMLz1UIwAAAABJRU5ErkJggg=="> Voltar</a>
     <form method="POST" enctype="multipart/form-data" style="margin-bottom: 20px;margin-top: 20px" role="form">
         <div class="form-group">
             <label form="categoria">Categoria</label>
@@ -79,7 +79,7 @@
                         <div class="foto-itens">
                             <div class="foto-itens-imagem" style="width: fit-content;text-align: center;">
                                 <img style="max-width: 200px" src="<?php echo BASE_URL;?>/assets/imgs/produtos/<?php echo $info['url']; ?>.jpg" class="img-thumbnail"><br>
-                                <a style="margin-top: 5px" href="<?php echo BASE_URL;?>/produtosCMS/excluirFoto/<?php echo base64_encode(base64_encode($info['id'])); ?>" class="btn btn-warning">Excluir Imagem</a>
+                                <a style="margin-top: 5px" href="<?php echo BASE_URL;?>/produtosCMS/excluirFoto/<?php echo base64_encode(base64_encode($info['id'])); ?>" class="btn btn-warning"><img style="margin-right: 5px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHVSURBVEhL7ZS7SgNhFITjpfEWQcFYiJeIoGKhRC1EFCwUtRbLPEEqn8BOfAGx8I538BETvznMFlkTdqMWFg4M55z5Z/5d/z9r4c+hXq+PNhqNsqql3wUbb8BnHnJGfdHspe+DTQ7Z8JZ6aT7CO/eqmpO1G3joaDYwr8Nj+ADnkuMR3bfUoPzKrXmr1sCwIDPBI+oUVHgGasMR9+20KeeUn/eWX8HiMKYn+AGTo+iEyilf9JbtwcNu3XaEjnK8yZ3rFsH+EA20pgtm7oPb7iOXC5ivXVfhSIgG877bALPuJi6bGrlcwHzvOgaHQjSYZ90GmIvyuY9cLmC+gDqGEmy6ROYFtwGtc6Tj9l9YzgbmU6ifpL6B9KYHbgN45tFm5YenlrOBuQZX9YawYjmAnn5IBU1/se6vZjkbBPVR7VMHqSuWA2ibbgPMy3gG7D+ynA0CO7BKqIs6YTmANuk2wLqOVb6qcpazgXkJnhDuhU3HxZz+Syryya+c5Wxg1hmfu98L0WBuuhPm+G7kh6UQ84A36yFwpZ6a/sLbPeRKuRDzglDy1S+GYDCnf9Kxnvg7AqF33kwXOmMpgFZ2G2Ceht3wzVJ+sPkefIWt/qWnKd+uo//4CQqFT0nmeWbSQNtVAAAAAElFTkSuQmCC"> Excluir Imagem</a>
                             </div>
                         </div>
                     <?php endif; ?>

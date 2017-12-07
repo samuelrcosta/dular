@@ -10,7 +10,7 @@
                         <img src="assets/media/avatar/<?php echo $usuario->getFoto() ?>.jpg" border="0" width="100%">
                         <input type="file" id="foto" name="foto" data-ob="0" style="margin-top: 15px;
     margin-bottom: 5px;">
-                        <input class="btn btn-default" type="button" id="trocarfoto" style="cursor: pointer" value="Trocar foto" />
+                        <input class="btn btn-primary" type="button" id="trocarfoto" style="cursor: pointer" value="Trocar foto" />
                     </div>
                 </div>
                 <form method="POST" onsubmit="return validar(this)" style="width: 65%">

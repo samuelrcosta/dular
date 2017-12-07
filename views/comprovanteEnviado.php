@@ -1,4 +1,5 @@
 </div>
+<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>/assets/css/<?php echo $css;?>.css">
 <style>
     #div-botao-boleto{
         display: none;
@@ -11,7 +12,6 @@
         height: 115px;
     }
 </style>
-<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>/assets/css/<?php echo $css;?>.css">
 <div class="container">
     <h1 style="text-align: center;margin-top: 45px;font-size: 32px;margin-bottom: 40px">Comprovante de Depósito recebido com sucesso!</h1>
     <p><?php echo $dadosOrcamento['nome'];?>, recebemos seu comprovante<br>

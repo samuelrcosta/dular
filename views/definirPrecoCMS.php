@@ -8,7 +8,7 @@
 </style>
 <div class="container main">
     <h1 style='margin-bottom: 20px'>Definir Preço</h1>
-    <button class="btn btn-primary" onclick="location.href = '<?php echo BASE_URL;?>/orcamentosCMS/abrir/<?php echo base64_encode(base64_encode($dadosOrcamento['id']));?>'">Voltar</button>
+    <button class="btn btn-primary" onclick="location.href = '<?php echo BASE_URL;?>/orcamentosCMS/abrir/<?php echo base64_encode(base64_encode($dadosOrcamento['id']));?>'"><img style="margin-right: 5px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACGSURBVEhLYxiZ4P////z//v0LgXKpD6AWnAJiEEiCClMPwCwA0iDwAcg2gUpRBwANpZ8FQPr9qAUYYHhZAAJA9k4g1UEBboAajQBAQ6cBJagJPkCNRgCgIO19AgJACdrGCQyMWkQ2GBCLgID6pTAMAA2nr0VADALUrxlhAGoR7er4QQ4YGAD5xQxMLz1UIwAAAABJRU5ErkJggg=="> Voltar</button>
     <div class="box" style="margin-top: 10px">
         <div class="box-title">Detalhes do Orçamento</div>
         <div class="box-body">

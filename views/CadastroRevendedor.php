@@ -5,7 +5,7 @@
 <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-flat.css" />
 <style>
     .home-back-img{
-        background-image: url("../../assets/imgs/fundo.jpg");
+        background-image: url("assets/imgs/fundo.jpg");
         background-repeat: no-repeat;
         background-position: center;
         height: 155px;

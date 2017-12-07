@@ -6,9 +6,9 @@
     }
 </style>
 <div class="container">
-    <h1 style="text-align: center;margin-top: 40px;font-size: 32px;margin-bottom: 25px">Orçamento vencido</h1>
-    <p>Olá <?php echo $dadosOrcamento['nome'];?>, infelizmente esse orçamento já está vencido.<br>
-        Entre em contato conosco solicitando a atualização da data de vencimento ou faça uma nova solicitação de orçamento.<br>
+    <h1 style="text-align: center;margin-top: 40px;font-size: 32px;margin-bottom: 25px">Solicitação do Boleto recebida!</h1>
+    <p>Olá <?php echo $dadosOrcamento['nome'];?>, recebemos a solicitação do boleto bancário.<br>
+        Enviaremos um e-mail em breve com o boleto para o pagamento.<br>
         Qualquer dúvida estamos a disposição.<br>
         <a style="margin: 0;color: black" href="<?php echo BASE_URL;?>/contato">Clique aqui</a> para nos enviar uma mensagem de contato.
     </p>

@@ -5,7 +5,7 @@
 </style>
 <div class="container" style="margin-left:180px;padding:30px;transition: all 0.5s;">
     <h1>Cadastrar Produto</h1>
-    <a href="javascript:window.history.go(-1)" class="btn btn-primary" style="margin-top:10px">Voltar</a>
+    <a href="javascript:window.history.go(-1)" class="btn btn-primary" style="margin-top:10px"><img style="margin-right: 5px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACGSURBVEhLYxiZ4P////z//v0LgXKpD6AWnAJiEEiCClMPwCwA0iDwAcg2gUpRBwANpZ8FQPr9qAUYYHhZAAJA9k4g1UEBboAajQBAQ6cBJagJPkCNRgCgIO19AgJACdrGCQyMWkQ2GBCLgID6pTAMAA2nr0VADALUrxlhAGoR7er4QQ4YGAD5xQxMLz1UIwAAAABJRU5ErkJggg=="> Voltar</a>
     <form method="POST" enctype="multipart/form-data" style="margin-bottom: 20px;margin-top: 20px">
         <div class="form-group">
             <label form="categoria">Categoria</label>

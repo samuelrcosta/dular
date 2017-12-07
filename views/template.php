@@ -1,13 +1,25 @@
 <html lang="pt-br">
     <head>
+        <!--=============================================================================================================
+Criado por : Samuel Rocha Costa | email: samu.rcosta@gmail.com
+=====================================================================================================================-->
         <title><?php echo $titulo ?></title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta property="og:title" content="<?php echo $titulo ?>"/>
         <meta property="og:site_name" content="Enxovais DuLar"/>
+        <meta name="keywords" content="Enxovais, Inhumas, Goiás, DuLar Enxovais, Indústria, Fábrica, Cama, Mesa, Banho, Lençol, Lençois, Fronhas, Toalhas, Colchas, Estampa, Floral, Geométrica">
         <?php if(isset($produto)):?>
         <meta property="og:description" content="<?php echo $produto['descricao'];?>"/>
         <meta property="og:image" content="<?php echo BASE_URL;?>/assets/imgs/produtos/<?php echo $produto['url']?>.jpg"/>
+        <?php endif;?>
+        <?php if(isset($description)):?>
+        <meta name="description" content="<?php echo $description ?>">
+        <meta name="Distribution" content="Global">
+        <meta name="Rating" content="General">
+        <meta name="author" content="Samuel R. Costa">
+        <meta name="robots" content="index, follow">
+        <meta name="robots" content="all">
         <?php endif;?>
         <link rel="shortcut icon" href="<?php echo BASE_URL;?>/assets/imgs/favicon.ico" />
         <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/jquery-3.2.1.min.js"></script>

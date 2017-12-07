@@ -61,6 +61,10 @@ class orcamentosCMSController extends controller{
         $o = new Orcamentos();
         $dadosOrcamento = $o->getOrcamento(base64_decode(base64_decode($id)));
         $produtosOrcamento = $o->getOrcamentoProdutos(base64_decode(base64_decode($id)));
+        if(isset($_FILES['arquivo'])){
+            $o->salvarBoleto(base64_decode(base64_decode($id)));
+            header("Location: ".BASE_URL."/orcamentosCMS/abrir/".$id);
+        }
         $dados = array(
             'titulo' => 'DuLar - Detalhes Orçamento',
             'usuario' => $u,
@@ -147,6 +151,8 @@ class orcamentosCMSController extends controller{
             $estado = addslashes($_POST['estado']);
             $status = addslashes($_POST['status']);
             $status_pag = addslashes($_POST['status_pag']);
+            $tipo_pagamento = addslashes($_POST['tipo_pagamento']);
+            $o->setTipoPag(base64_decode(base64_decode($id)), $tipo_pagamento);
             if($dadosOrcamento['status_pag'] != $status_pag){
                 $o->setStatusPag(base64_decode(base64_decode($id)), $status_pag);
                 if($status_pag == '2'){
@@ -325,4 +331,110 @@ class orcamentosCMSController extends controller{
         }
     }
 
+    public function enviarBoleto($id){
+        if (!isset($_SESSION['cLogin']) || empty($_SESSION['cLogin'])) {
+            header("Location: " . BASE_URL);
+        }
+        $u = new Usuarios();
+        $u->iniciar($_SESSION['cLogin']);
+        $o = new Orcamentos();
+        $dadosOrcamento = $o->getOrcamento(base64_decode(base64_decode($id)));
+        $produtosOrcamento = $o->getOrcamentoProdutos(base64_decode(base64_decode($id)));
+        $o->setStatus(base64_decode(base64_decode($id)), 3);
+        $o->setStatusPag(base64_decode(base64_decode($id)), 4);
+        $mensagem = "<table width='100%' border='0' cellspacing='0' cellpadding='0' style='text-align: center'>
+                        <tbody>
+
+                            <tr>
+                                <td><h2>Olá ".$dadosOrcamento['nome']."!</h2></td>
+                            </tr>
+                            <tr>
+                                <td><h3>Segue em anexo o boleto para pagamento</h3></td>
+                            </tr>
+                            <tr>
+                                <td height='20'></td>
+                            </tr>
+                        </tbody>
+                      </table>
+                     <table width='100%' border='1' cellspacing='1' cellpadding='0' style='text-align: center'>
+                      <thead>
+                        <tr height='30'>
+                            <th>Foto</th>
+                            <th>Produto</th>
+                            <th>Categoria</th>
+                            <th>Quantidade</th>
+                            <th>Observação</th>
+                            <th>Preço Unitário</th>
+                        </tr>
+                      </thead>
+                      <tbody>";
+        foreach ($produtosOrcamento as $produto){
+            $mensagem .= "<tr>
+                        <td><img width='50px' src='".BASE_URL."/assets/imgs/produtos/".$produto['url'].".jpg'></td>
+                            <td>".$produto['nome']."</td>
+                            <td>".$produto['NomeCategoria']."</td>
+                            <td>".$produto['quantidade']."</td>
+                            <td>".$produto['obs_adm']."</td>
+                            <td>".str_replace(".", ",", number_format($produto['preco'],2))."</td>
+                            </tr>";
+        }
+        if($dadosOrcamento['preco_frete'] != ""){
+            $mensagem .= "<tr>
+                        <td colspan='5' style='text-align: right'><strong style='margin-right: 5px'>FRETE</strong></td>
+                        <td height='25'><strong>R$ ".str_replace(".", ",", number_format($dadosOrcamento['preco_frete'],2))."</strong></td>
+                      </tr>";
+        }
+        if($dadosOrcamento['desconto'] != ""){
+            $mensagem .= "<tr>
+                        <td colspan='5' style='text-align: right'><strong style='margin-right: 5px'>TOTAL</strong></td>";
+            $mensagem .= "<td height='25'><strong>R$ ".str_replace(".", ",", number_format($dadosOrcamento['preco_total'],2))."</strong></td>
+                      </tr>
+                      <tr>
+                        <td colspan='5' style='text-align: right;color: red'><strong style='margin-right: 5px'>DESCONTO</strong></td>
+                        <td height='25' style='color: red'><strong>R$ ".str_replace(".", ",", number_format($dadosOrcamento['desconto'],2))."</strong></td>
+                      </tr>
+                      <tr>
+                        <td colspan='5' style='text-align: right'><strong style='margin-right: 5px'>TOTAL FINAL</strong></td>
+                        <td height='25'><strong>R$ ".str_replace(".", ",", number_format($dadosOrcamento['preco_final'],2))."</strong></td>
+                      </tr>";
+        }else{
+            $mensagem .= "<tr>
+                        <td colspan='5' style='text-align: right'><strong style='margin-right: 5px'>TOTAL</strong></td>";
+            $mensagem .= "<td height='25'><strong>R$ ".str_replace(".", ",", number_format($dadosOrcamento['preco_total'],2))."</strong></td>
+                      </tr>";
+        }
+
+        $mensagem .= "</tbody>
+                    </table>";
+        $mensagem .= "<table width='100%' border='0' cellspacing='0' cellpadding='0' style='text-align: center'>
+                        <tbody>";
+        if($dadosOrcamento['observacao'] != "")
+            $mensagem .= "<tr style='text-align: left; color: red;height: 30px'>
+                            <td><strong>Observações</strong></td>
+                          </tr>
+                          <tr style='text-align: left;color: red'>
+                            <td><pre style='margin: 0'>".$dadosOrcamento['observacao']."</pre></td>
+                          </tr>";
+        if($dadosOrcamento['tipo_frete'] != '')
+            $mensagem .= "<tr style='text-align: left;height: 30px'>
+                            <td><strong>Tipo do Frete</strong></td>
+                          </tr>
+                          <tr style='text-align: left;'>
+                            <td>".$dadosOrcamento['tipo_frete']."</td>
+                          </tr>";
+        if($dadosOrcamento['prazo_frete'] != '')
+            $mensagem .= "<tr style='text-align: left;height: 30px'>
+                            <td><strong>Prazo de Entrega</strong></td>
+                          </tr>
+                          <tr style='text-align: left;'>
+                            <td>".$dadosOrcamento['prazo_frete']."</td>
+                          </tr>";
+        $mensagem .= "</tbody>
+                </table>";
+        if($o->enviarEmailComTemplate2Anexo(base64_decode(base64_decode($id)), $dadosOrcamento['nome'], $dadosOrcamento['email'], "Boleto - Enxovais DuLar", $mensagem) == True){
+            header("Location: ".BASE_URL."/orcamentosCMS/abrir/".$id."?retorno=email");
+        }else{
+            echo "<script>alert('erro')</script>";
+        }
+    }
 }

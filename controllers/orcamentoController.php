@@ -25,9 +25,6 @@ class orcamentoController extends controller{
             $produtos = array();
             $listaProdutos = $p->getProdutos(1, 10000);
 
-            $apikey  = '71be00dc7f6d47e17b46729c76ec86a1-us17';
-            $list_id = '4693fc3549';
-
             for($i = 0; $i < count($listaProdutos); $i++){
                 if(isset($_POST['qt-'.base64_encode(base64_encode($listaProdutos[$i]["id"]))]) && !empty($_POST['qt-'.base64_encode(base64_encode($listaProdutos[$i]["id"]))])){
                     $registro = array(
@@ -52,8 +49,9 @@ class orcamentoController extends controller{
 
         }
         $dados = array(
-            'titulo' => 'Faça um orçamento',
+            'titulo' => 'Faça um orçamento conosco',
             'css' => 'style-CadastroOrcamento',
+            'description' => 'Explore nossos produtos e faça de forma simples e rápida um orçamento, em um ambiente totalmente seguro.',
             'camas' => $camas,
             'mesas' => $mesas,
             'banhos' => $banhos,

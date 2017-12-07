@@ -33,7 +33,7 @@
     <div class="discussionarea">
         <div class="row">
             <div class="col-sm-9">
-                <a href="<?php echo BASE_URL;?>/produtosCMS/addProduto" class="btn btn-success" style="margin-top:10px">Novo Produto</a>
+                <a href="<?php echo BASE_URL;?>/produtosCMS/addProduto" class="btn btn-success" style="margin-top:10px"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACsSURBVEhL7ZVRCoMwEESDN+i/eJr+9R6FnsBCD+btks7DERSL0qglBR8s0ZnsDipqOMkmpVSpLjtU5ZFzZDaqPWg8cg4mO2KMnarNqI5+sR4inpa+gr6+vfQQ6fh3VksT6FNBfoju+Q2T1dIE+vBFgSEaWOv8Sun4hel10Gpv3RTysPYRfG8t/ErGaOAfP/gx0vGPfU/WoK9vLyVE9/wnX+GtLIYc/2c8WSaEN4s3OtweHF5rAAAAAElFTkSuQmCC"> Novo Produto</a>
                 <div id='div-find'>
                     <input class='form-control' onKeyPress="pesquisarTeclado();" <?php if(isset($termoPesquisa)) echo "Value='".$termoPesquisa."'"; ?> style="margin-bottom: 10px;margin-top: 10px" type='text' name='find' id='find' placeholder='Busque um produto'/>
                 </div>
@@ -60,8 +60,8 @@
                                 <p><strong>Sub-Categorias:</strong> <br><?php echo str_replace(",", "<br>", $produto['tag_name']) ?></p>
                             </td>
                             <td>
-                                <a class="btn btn-info" style="margin-top: 5px" href="<?php echo BASE_URL;?>/produtosCMS/editarProduto/<?php echo base64_encode(base64_encode($produto['id'])) ?>">Editar</a>
-                                <button class="btn btn-danger" style="margin-top: 5px" onclick="exProduto('<?php echo base64_encode(base64_encode($produto['id'])) ?>')">Excluir</button>
+                                <a class="btn btn-info" style="margin-top: 5px" href="<?php echo BASE_URL;?>/produtosCMS/editarProduto/<?php echo base64_encode(base64_encode($produto['id'])) ?>"><img style="margin-right: 5px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGiSURBVDhPpZM5SwNRFEZjYRTcavc12on4A8SIlXZxKSRgLyoqcesEGwuxkVhY2djZuVb6HwTBJYq4VIKgYBGFGc993gmDPJNJ/OBw30y+e5zRGCokjuNUwDacua7bq7cLD6JVRCac0zCgH+UXFhshiaecefSjzEgHtRY87K6oYB/ktY/lWqLSTq1mD8VqdnaYlbClApt0Tlf+DqUauIRndlqgiLNfKj/kBD6gQ9fsoVALV/AE7ThGmKdQBhkpo4rZrWv2UKiDazAyGIYvlcQZ/icd1TV7KNRDCh4hAn7ZMqMU1jjL60Z1zR6KDZRuwS/7FBlZ4lwC5g/BjOuaPXSaKN2ByNpgCIyMuQh+2YKu2UOhGe5BZK0gsrS3DCIzX2ZmQtfsoSC/C3myBxBZDDIyRpjpyQJ918akTLo4+2XzDJEdgmRGV7KH4i6k9DwOL5D4JZs25VxhqZjyK2zqLZH2qOwAJJP6Ue5QjrIsrxeTaxX1gfw7SSZMMWhYWFfhBezBm16/Q/An88LSuQgknG9gg2M/hLWSXxBMwSxE9NY/Egp9A3flly2oRu2RAAAAAElFTkSuQmCC"> Editar</a>
+                                <button class="btn btn-danger" style="margin-top: 5px" onclick="exProduto('<?php echo base64_encode(base64_encode($produto['id'])) ?>')"><img style="margin-right: 5px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADVSURBVDhP7Y5NDsFQFEZLiLFI7KJCrUJqIzaCLZhYAUaGEhJrMDIQIRJjZpLWafM1oU/avplBT3Jye3/7nCyCIGhgLwzDfiTfHWJFbXs4sMI5zuQSx2pnw59rDHvJa/SiYyr3cZ+quTrxDY0Wbhmygp2FTpjQHGmuMOz4WjdJHyTfKB7whi/SXVRLoGZ10FWc4BrP6MdNEeVaN6FZHiwP/t1B6CpOdfCCQ9VirA6SnxTv+PysJZBbvTAXdgZaN6Hp4UOzuTB7xbbWf8NcHZsFrWpNOM4boILOrcn+MiEAAAAASUVORK5CYII="> Excluir</button>
                             </td>
                         </tr>
                     <?php endforeach; ?>

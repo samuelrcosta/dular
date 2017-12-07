@@ -93,10 +93,10 @@
             </label>
         </div>
     </div>
-    <div id="div-botao-boleto" style="margin-bottom: 40px">
+    <div id="div-botao-boleto" style="margin-bottom: 20px">
         <h5>Pagamento via boleto</h5>
-        <p style="margin-left: 10px">Para gerar o boleto bancário basta apertar no botão abaixo:<br><br>
-        <a href="<?php echo BASE_URL ?>/pagamento/gerarBoleto/<?php echo $id ?>" class="btn btn-lg btn-success" style="cursor:pointer;margin-left: 20px">Gerar Boleto</a>
+        <p style="margin-left: 10px">Para receber o boleto para pagamento, aperte no botão abaixo que nossa equipe irá enviar o boleto bancário para seu e-mail<br><br>
+        <a href="<?php echo BASE_URL ?>/pagamento/solicitarBoleto/<?php echo $id ?>" class="btn btn-lg btn-success" style="cursor:pointer;margin-left: 20px">Solicitar Boleto</a>
     </div>
     <div id="div-botao-deposito" style="margin-top: 30px;margin-bottom: 40px">
         <h5>Pagamento via depósito</h5>
