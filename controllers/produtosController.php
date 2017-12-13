@@ -11,8 +11,8 @@ class produtosController extends controller{
         }else{
             $produtos = $p->getProdutos(1, 10000);
             $totalProdutos = count($produtos);
-            $returnName = 'Todos os Produtos';
-            $localDoSite = "TODOS OS PRODUTOS";
+            $returnName = 'Alguns de nossos Produtos';
+            $localDoSite = "ALGUNS DE NOSSOS PRODUTOS";
         }
         $totalProdutos = count($produtos);
         $dados = array(

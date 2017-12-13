@@ -95,11 +95,8 @@ class contatosCMSController extends controller{
         $mensagem = nl2br(addslashes($_POST['mensagem']));
         $c = new Contatos();
         $c->setStatus(base64_decode(base64_decode(addslashes($_POST['id']))), 3);
-        if ($c->enviarEmailComTemplate($nome, $email, $assunto, $mensagem) == True) {
-            echo "1";
-        } else {
-            echo "Erro";
-        }
+        $c->enviarEmailComTemplate($nome, $email, $assunto, $mensagem);
+        echo "1";
     }
 
     public function abrir($id){

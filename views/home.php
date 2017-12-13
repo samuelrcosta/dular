@@ -12,7 +12,7 @@
     }
 </style>
     <div class="home-cap-img">
-        <h3>Exovais DuLar</h3>
+        <h3>Enxovais DuLar</h3>
         <p>SEJA UM REVENDEDOR<br>CONHEÇA AS VANTAGENS!</p>
         <div id="botao-transparente"><a href="<?php echo BASE_URL;?>/revendedor">Conheça</a></div>
         <div id="div-branca"></div>
