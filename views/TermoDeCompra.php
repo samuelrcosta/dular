@@ -49,7 +49,7 @@
     <h2 style="margin-bottom: 25px;text-align: center;">Política de Compra, Venda e Devolução</h2>
     <h5>Nossa política</h5>
     <p>Enxovais DuLar tem muito respeito por seus clientes, e para manter a credibilidade e a transparência
-        nessa relação, possuímos uma política de trocas e devoluções com base no Código de Defesa do
+        nessa relação, possuímos uma política de compra, venda e devolução com base no Código de Defesa do
         Consumidor e nas necessidades dos seus clientes. Este documento estabelece os procedimentos e
         normas de compra, venda e devoluções dos produtos adquiridos no nosso site.</p>
     <h5>Processo de COMPRA E VENDA</h5>
