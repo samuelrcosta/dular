@@ -46,14 +46,14 @@
 </div>
 <div class="container">
     <h1 style="text-align: center;margin-top: 40px;font-size: 32px">Faça seu orçamento conosco!</h1>
-    <div class="revendedor-cadastro-box">
+        <div class="revendedor-cadastro-box">
         <p style="text-align: center">Preencha os campos abaixo. Após o envio dos dados iremos entrar em contato e fornecer maiores informações</p>
         <form id="form-revendedor" method="POST" onsubmit="return validar(this)">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Nome <span>*</span></label>
-                        <input type="text" id="nome" name="nome" class="form-control" data-ob="1" data-alt="Nome">
+                        <input type="text" id="nome" name="nome" <?php if(!empty($dadosForm)) echo 'Value="'.$dadosForm['nome'].'"' ?> class="form-control" data-ob="1" data-alt="Nome">
                     </div>
                     <div class="form-group">
                         <label class="radio-inline"><input id="pf" value="pf" type="radio" name="tipo-pessoa"> Pessoa Física</label>
@@ -63,53 +63,53 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>CPF <span>*</span></label>
-                                <input type="text" id="cpf-cnpj" name="cpf-cnpj" class="form-control" data-ob="1" data-alt="CPF">
+                                <input type="text" id="cpf-cnpj" name="cpf-cnpj" class="form-control" data-ob="1" data-alt="CPF" <?php if(!empty($dadosForm)) echo 'Value="'.$dadosForm['cpf-cnpj'].'"' ?>>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>RG <span>*</span></label>
-                                <input type="text" id="rg-ie" name="rg-ie" class="form-control" data-ob="1" data-alt="RG">
+                                <input type="text" id="rg-ie" name="rg-ie" class="form-control" data-ob="1" data-alt="RG" <?php if(!empty($dadosForm)) echo 'Value="'.$dadosForm['rg-ie'].'"' ?>>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Celular <span>*</span></label>
-                        <input type="text" id="celular" name="celular" class="form-control" data-ob="1" data-alt="Celular">
+                        <input type="text" id="celular" name="celular" class="form-control" data-ob="1" data-alt="Celular" <?php if(!empty($dadosForm)) echo 'Value="'.$dadosForm['celular'].'"' ?>>
                     </div>
                     <div class="form-group">
                         <label>Telefone</label>
-                        <input type="text" id="telefone" name="telefone" class="form-control" data-ob="0" data-alt="Telefone">
+                        <input type="text" id="telefone" name="telefone" class="form-control" data-ob="0" data-alt="Telefone" <?php if(!empty($dadosForm)) echo 'Value="'.$dadosForm['telefone'].'"' ?>>
                     </div>
                     <div class="form-group">
                         <label>E-mail <span>*</span></label>
-                        <input type="text" id="email" name="email" class="form-control" data-ob="1" data-alt="E-mail">
+                        <input type="text" id="email" name="email" class="form-control" data-ob="1" data-alt="E-mail" <?php if(!empty($dadosForm)) echo 'Value="'.$dadosForm['email'].'"' ?>>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Endereço <span>*</span></label>
-                        <input type="text" id="endereco" name="endereco" class="form-control" data-ob="1" data-alt="Endereço">
+                        <input type="text" id="endereco" name="endereco" class="form-control" data-ob="1" data-alt="Endereço" <?php if(!empty($dadosForm)) echo 'Value="'.$dadosForm['endereco'].'"' ?>>
                     </div>
                     <div class="form-group">
                         <label>Bairro <span>*</span></label>
-                        <input type="text" id="bairro" name="bairro" class="form-control" data-ob="1" data-alt="Bairro">
+                        <input type="text" id="bairro" name="bairro" class="form-control" data-ob="1" data-alt="Bairro" <?php if(!empty($dadosForm)) echo 'Value="'.$dadosForm['bairro'].'"' ?>>
                     </div>
                     <div class="form-group">
                         <label>Cidade <span>*</span></label>
-                        <input type="text" id="cidade" name="cidade" class="form-control" data-ob="1" data-alt="Cidade">
+                        <input type="text" id="cidade" name="cidade" class="form-control" data-ob="1" data-alt="Cidade" <?php if(!empty($dadosForm)) echo 'Value="'.$dadosForm['cidade'].'"' ?>>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>CEP <span>*</span></label>
-                                <input type="text" id="cep" name="cep" class="form-control" data-ob="1" data-alt="CEP">
+                                <input type="text" id="cep" name="cep" class="form-control" data-ob="1" data-alt="CEP" <?php if(!empty($dadosForm)) echo 'Value="'.$dadosForm['cep'].'"' ?>>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Estado <span>*</span></label>
-                                <input type="text" id="estado" name="estado" class="form-control" data-ob="1" data-alt="Estado">
+                                <input type="text" id="estado" name="estado" class="form-control" data-ob="1" data-alt="Estado" <?php if(!empty($dadosForm)) echo 'Value="'.$dadosForm['estado'].'"' ?>>
                             </div>
                         </div>
                     </div>
@@ -228,10 +228,10 @@
                     </li>
                 </ul>
             </div>
+            <?php if(isset($_SESSION['msg'])): ?>
+                <?php echo $_SESSION['msg']; ?>
+            <?php endif;?>
             <div id="retorno" style="margin-bottom: 10px;display: none">
-                <?php if(isset($_SESSION['msg'])): ?>
-                    <?php echo $_SESSION['msg']; ?>
-                <?php endif;?>
             </div>
             <p style="font-size: 14px">Ao enviar um orçamento automaticamente estará de acordo com a nossa <a style="color: black;margin: 0;" target="_blank" href="<?php echo BASE_URL;?>/orcamento/TermoDeCompra">Política de Compra, Venda e Devolução</a>.</p>
             <input id="submit" role="button" type="submit" class="btn-lg btn-success" style="cursor: pointer" value="Enviar">
@@ -244,8 +244,27 @@
 </div>
 <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/jquery.mask.js"></script>
 <script>
-    document.getElementById("pf").checked = true;
-    $("#cpf-cnpj").mask("000.000.000-00");
+    <?php
+        if(empty($dadosForm)){
+        echo 'document.getElementById("pf").checked = true;
+            $("#cpf-cnpj").mask("000.000.000-00");';
+        }
+        elseif(!empty($dadosForm) && $dadosForm['tipo-pessoa'] == 'pj'){
+            echo 'document.getElementById("pj").checked = true;
+                $("#cpf-cnpj").mask("00.000.000/0000-00");
+                $("#rg-ie").mask("00000000");
+                $("#cpf-cnpj").parent().find("label").html("CNPJ <span>*</span>");
+                $("#cpf-cnpj").attr("data-alt", "CNPJ");
+                $("#rg-ie").parent().find("label").html("IE <span>*</span>");
+                $("#rg-ie").attr("data-alt", "IE");';
+        }elseif(!empty($dadosForm) && $dadosForm['tipo-pessoa'] == 'pf'){
+            echo 'document.getElementById("pf").checked = true;
+                $("#cpf-cnpj").mask("000.000.000-00");';
+        }
+        if(isset($_SESSION['msg']) && !empty($_SESSION['msg'])){
+            echo 'document.getElementById("alertaSemProduto").scrollIntoView();';
+        }
+    ?>
     $("#rg-ie").mask("0000000");
     $("#investimentoinicial").mask("#.##0,00", {reverse: true});
     $('#celular').mask('(00) 0000-#0000');

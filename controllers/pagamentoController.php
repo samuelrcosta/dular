@@ -16,6 +16,9 @@ class pagamentoController extends controller{
                     'id' => $id,
                     'dadosOrcamento' => $dadosOrcamento
                 );
+                $assunto = "Comprovante de Depósito enviado no site";
+                $mensagem = "Orçamento: ".$dadosOrcamento['id']."<br>Nome: ".$dadosOrcamento['nome']."<br>"."E-mail: ".$dadosOrcamento['email'];
+                $o->enviarEmailComTemplate($this->MailName, $this->MailUsername, $assunto, $mensagem);
                 $this->loadTemplate('comprovanteEnviado', $dados);
             }else{
                 $dados = array(

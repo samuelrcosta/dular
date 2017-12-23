@@ -3,6 +3,7 @@ class orcamentoController extends controller{
     public function index()
     {
         $this->registraAcesso('Orçamento');
+        $_SESSION['msg'] = '';
         $p = new Produtos();
         $camas = $p->getProdutosComCat(1);
         $mesas = $p->getProdutosComCat(2);
@@ -35,18 +36,34 @@ class orcamentoController extends controller{
                     array_push($produtos, $registro);
                 }
             }
-            $o->inscreverMailChimp($email, $nome);
-            $o->cadastrarOrcamento($nome, $tipopessoa, $cpf_cnpj, $rg_ie, $celular, $telefone, $email, $endereco, $bairro, $cidade, $cep, $estado, $produtos);
+
+            if(count($produtos) > 0){
+                $o->inscreverMailChimp($email, $nome);
+                $o->cadastrarOrcamento($nome, $tipopessoa, $cpf_cnpj, $rg_ie, $celular, $telefone, $email, $endereco, $bairro, $cidade, $cep, $estado, $produtos);
 
 
-            $assunto = "Novo orçamento recebido no site";
-            $mensagem = "Nome: ".$nome."<br>"."E-mail: ".$email;
-            $o->enviarEmailComTemplate($this->MailName, $this->MailUsername, $assunto, $mensagem);
-            $assunto = "Recebemos sua solicitação de orçamento - Enxovais DuLar";
-            $msg = "Olá ".$nome."<br>Recebemos sua solicitação de orçamento.<br>Iremos analisar e responderemos o mais rápido possível.";
-            $o->enviarEmailComTemplate($nome, $email, $assunto, $msg);
-            header("Location: ".BASE_URL."/orcamento/sucesso/".$nome);
-
+                $assunto = "Novo orçamento recebido no site";
+                $mensagem = "Nome: ".$nome."<br>"."E-mail: ".$email;
+                $o->enviarEmailComTemplate($this->MailName, $this->MailUsername, $assunto, $mensagem);
+                $assunto = "Recebemos sua solicitação de orçamento - Enxovais DuLar";
+                $msg = "Olá ".$nome."<br>Recebemos sua solicitação de orçamento.<br>Iremos analisar e responderemos o mais rápido possível.";
+                $o->enviarEmailComTemplate($nome, $email, $assunto, $msg);
+                header("Location: ".BASE_URL."/orcamento/sucesso/".$nome);
+            }else{
+                $_SESSION['msg'] = '<div id="alertaSemProduto" class="alert alert-danger">Escolha pelo menos um produto para fazer o orçamento.</div>';
+                $dados = array(
+                    'titulo' => 'Faça um orçamento conosco',
+                    'css' => 'style-CadastroOrcamento',
+                    'description' => 'Explore nossos produtos e faça de forma simples e rápida um orçamento, em um ambiente totalmente seguro.',
+                    'camas' => $camas,
+                    'mesas' => $mesas,
+                    'banhos' => $banhos,
+                    'decoracoes' => $decoracoes,
+                    'dadosForm' => $_POST
+                );
+                $this->loadTemplate('CadastroOrcamento', $dados);
+                exit();
+            }
         }
         $dados = array(
             'titulo' => 'Faça um orçamento conosco',
@@ -55,7 +72,8 @@ class orcamentoController extends controller{
             'camas' => $camas,
             'mesas' => $mesas,
             'banhos' => $banhos,
-            'decoracoes' => $decoracoes
+            'decoracoes' => $decoracoes,
+            'dadosForm' => ''
         );
         $this->loadTemplate('CadastroOrcamento', $dados);
     }
