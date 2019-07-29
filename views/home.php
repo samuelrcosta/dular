@@ -37,7 +37,7 @@
                 <span><a href="<?php echo BASE_URL;?>/produtos/categorias/Banho"><h3>Banho</h3></a></span>
             </div>
             <div class="div-img-modelo" id="img-decoracao">
-                <span><a href="<?php echo BASE_URL;?>/produtos/categorias/Decoracao"><h3>Decoração</h3></a></span>
+                <span><a href="<?php echo BASE_URL;?>/produtos/categorias/Decoração"><h3>Decoração</h3></a></span>
             </div>
         </div>
     </div>
