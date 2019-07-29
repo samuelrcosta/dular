@@ -23,7 +23,7 @@ class produtosController extends controller{
             'localDoSite' => $localDoSite,
             'description' => 'Conheça os produtos DuLar, uma variedade de peças, estampas e cores. Ideais para o uso pessoal e para revenda. Todos os produtos são 100% algodão para trazer mais conforto aos nossos clientes.'
         );
-        $this->loadTemplate('produtos', $dados);
+        $this->loadTemplate('categorias_produtos', $dados);
     }
 
     public function categorias($nome){
