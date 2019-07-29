@@ -11,7 +11,23 @@
 <div class="menu-produtos">
     <div class="container">
         <div>
-            <h5><a href="<?php echo BASE_URL;?>">HOME</a> > <a href="<?php echo BASE_URL;?>/produtos">PRODUTOS</a> > &nbsp;&nbsp;<?php echo $localDoSite ?></h5>
+          <ol vocab="https://schema.org/" typeof="BreadcrumbList">
+            <li property="itemListElement" typeof="ListItem">
+              <a property="item" typeof="WebPage"
+                 href="<?php echo BASE_URL;?>">
+                <span property="name">HOME</span></a>
+              <meta property="position" content="1">
+            </li>
+	          <?php for($i = 0; $i < count($breadcrumbs); $i++): ?>
+                >
+                <li property="itemListElement" typeof="ListItem">
+                  <a property="item" typeof="WebPage"
+                     href="<?php echo $breadcrumbs[$i]['url']; ?>">
+                    <span property="name"><?php echo $breadcrumbs[$i]['titulo']; ?></span></a>
+                  <meta property="position" content="<?php echo $i + 2; ?>">
+                </li>
+	          <?php endfor; ?>
+          </ol>
         </div>
     </div>
 </div>
@@ -60,6 +76,6 @@
     $("#share").jsSocials({
         showLabel: false,
         showCount: false,
-        shares: ["email", "twitter", "facebook", "googleplus", "linkedin", "whatsapp"]
+        shares: ["twitter", "facebook", "whatsapp"]
     });
 </script>

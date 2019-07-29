@@ -42,7 +42,15 @@
     font-size: 12px;
     color: #4d4d4d;
 }
-
+.menu-produtos .container ol{
+    list-style: none;
+    display: inline;
+    font-size: 12px;
+    color: #4d4d4d;
+}
+.menu-produtos .container ol li{
+    display: inline;
+}
 .menu-produtos .container a{
     color: #4d4d4d;
     margin: 10px 10px;

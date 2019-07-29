@@ -36,11 +36,34 @@
         text-decoration: underline;
     }
 
+    .menu-produtos .container ol{
+      list-style: none;
+      display: inline;
+      font-size: 12px;
+      color: #4d4d4d;
+    }
+    .menu-produtos .container ol li{
+      display: inline;
+    }
 </style>
 <div class="menu-produtos">
     <div class="container">
         <div>
-            <h5><a href="<?php echo BASE_URL;?>">HOME</a> > <a href="<?php echo BASE_URL;?>/orcamento">ORCAMENTO</a></h5>
+          <ol vocab="https://schema.org/" typeof="BreadcrumbList">
+            <li property="itemListElement" typeof="ListItem">
+              <a property="item" typeof="WebPage"
+                 href="<?php echo BASE_URL;?>">
+                <span property="name">HOME</span></a>
+              <meta property="position" content="1">
+            </li>
+            >
+            <li property="itemListElement" typeof="ListItem">
+              <a property="item" typeof="WebPage"
+                 href="<?php echo BASE_URL;?>/orcamento">
+                <span property="name">ORCAMENTO</span></a>
+              <meta property="position" content="2">
+            </li>
+          </ol>
         </div>
     </div>
 </div>
