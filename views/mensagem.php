@@ -364,7 +364,7 @@
                                                                                                     Av. Bernardo Sayão Qd 01 Lt. 19<br/>
                                                                                                     Residencial Tereza Lima<br/>
                                                                                                     Inhumas - GO<br/>
-                                                                                                    (62) 3514-5771 <br/>
+                                                                                                    (62) 98484-5771 - (62) 3514-5771 <br/>
                                                                                                     <a target='_blank' href='".BASE_URL."/contato' style='color:#AAAAAA;'>Entre em contato</a> <br/>
                                                                                                 </p>
                                                                                             </div>

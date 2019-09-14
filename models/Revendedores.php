@@ -1,5 +1,6 @@
 <?php
-require 'PHPMailer-master/PHPMailerAutoload.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 class Revendedores extends model{
     public function cadastrar($nome, $cpf, $rg, $celular, $telefone, $email, $endereco, $bairro, $cidade, $cep, $estado){
         $sql = $this->db->prepare("INSERT INTO revendedores SET nome = ?, cpf = ?, rg = ?, celular = ?, telefone = ?, email = ?, endereco = ?, bairro = ?, cidade = ?, cep = ?, estado = ?, dt_criacao = now()");
@@ -74,7 +75,7 @@ class Revendedores extends model{
     }
 
     public function enviarEmail($destnome, $destemail, $assunto, $mensagem){
-        $mail= new PhpMailer;
+        $mail= new PHPMailer(true);
         $mail->IsSMTP();
         $mail->Host = $this->MailHost;
         // Enable this option to see deep debug info
@@ -106,7 +107,7 @@ class Revendedores extends model{
     }
 
     public function enviarEmailComTemplate($destnome, $destemail, $assunto, $mensagem){
-        $mail= new PhpMailer;
+        $mail= new PHPMailer(true);
         $mail->IsSMTP();
         $mail->Host = $this->MailHost;
         // Enable this option to see deep debug info

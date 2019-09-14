@@ -27,13 +27,13 @@ class homeCMSController extends controller{
             array_push($acessosPorIpPorPagina, count($a->getAcessosPorIpPorPagina($pagina)));
         }
         foreach ($acessosProdutosPorPaginaCama as $produto){
-            array_push($acessosProdutosPorIpPorPaginaCama, count($a->getAcessosProduto($produto['produto_id'], 5)));
+            array_push($acessosProdutosPorIpPorPaginaCama, count($a->getAcessosProduto($produto['produto_id'])));
         }
         foreach ($acessosProdutosPorPaginaMesa as $produto){
-            array_push($acessosProdutosPorIpPorPaginaMesa, count($a->getAcessosProduto($produto['produto_id'], 5)));
+            array_push($acessosProdutosPorIpPorPaginaMesa, count($a->getAcessosProduto($produto['produto_id'])));
         }
         foreach ($acessosProdutosPorPaginaBanho as $produto){
-            array_push($acessosProdutosPorIpPorPaginaBanho, count($a->getAcessosProduto($produto['produto_id'], 5)));
+            array_push($acessosProdutosPorIpPorPaginaBanho, count($a->getAcessosProduto($produto['produto_id'])));
         }
         foreach ($produtosOrcamentados as $produto){
             array_push($prodsOrcamentos, $p->getProduto($produto['produto_id'])['nome']);

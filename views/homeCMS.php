@@ -142,38 +142,63 @@
         legend: {
             position: 'top',
         },
-    }
+        scales: {
+          xAxes: [{
+            ticks: {
+              callback: function(value) {
+                if (value.length > 15) {
+                  return value.substr(0, 15) + '...'; //truncate
+                } else {
+                  return value
+                }
+
+              },
+            }
+          }],
+          yAxes: [{}]
+        },
+        tooltips: {
+          enabled: true,
+          mode: 'label',
+          callbacks: {
+            title: function(tooltipItems, data) {
+              var idx = tooltipItems[0].index;
+              return data.labels[idx]; //do something with title
+            }
+          }
+        }
+    };
 
     var ctx = document.getElementById("graficoAcessos").getContext("2d");
-    var myBarChart = new Chart(ctx, {
+    var graficoAcessosChart = new Chart(ctx, {
         type: 'bar',
         data: barChartData,
         options: options
     });
 
     var graficoAcessosProdutosCama = document.getElementById("graficoAcessosProdutosCama").getContext("2d");
-    var myBarChart = new Chart(graficoAcessosProdutosCama, {
+    var graficoAcessosProdutosCamaChart = new Chart(graficoAcessosProdutosCama, {
         type: 'bar',
         data: dataGraficoProdutosCama,
         options: options
     });
 
     var graficoAcessosProdutosMesa = document.getElementById("graficoAcessosProdutosMesa").getContext("2d");
-    var myBarChart = new Chart(graficoAcessosProdutosMesa, {
+    var graficoAcessosProdutosMesaChart = new Chart(graficoAcessosProdutosMesa, {
         type: 'bar',
         data: dataGraficoProdutosMesa,
         options: options
     });
 
     var graficoAcessosProdutosBanho = document.getElementById("graficoAcessosProdutosBanho").getContext("2d");
-    var myBarChart = new Chart(graficoAcessosProdutosBanho, {
+    var graficoAcessosProdutosBanhoChart = new Chart(graficoAcessosProdutosBanho, {
         type: 'bar',
         data: dataGraficoProdutosBanho,
         options: options
     });
 
     var graficoProdutosOrcamentados = document.getElementById("graficoProdutosOrcamentos").getContext("2d");
-    var myBarChart = new Chart(graficoProdutosOrcamentados, {
+    var graficoProdutosOrcamentosChart = new Chart(graficoProdutosOrcamentados, {
         type: 'bar',
         data: dataGraficoProdutosOrcamentos,
         options: options

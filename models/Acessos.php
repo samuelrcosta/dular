@@ -22,13 +22,13 @@ class Acessos extends model{
     }
 
     public function getAcessosProdutos($id_categoria, $limite){
-        $sql = $this->db->prepare("SELECT *, count(produto_id) as acessos FROM acessos_produtos LEFT JOIN produtos ON produtos.id = acessos_produtos.produto_id WHERE categoria = ? GROUP BY produto_id ORDER BY acessos DESC LIMIT ".$limite." ");
+        $sql = $this->db->prepare("SELECT produto_id, nome, count(produto_id) as acessos FROM acessos_produtos LEFT JOIN produtos ON produtos.id = acessos_produtos.produto_id WHERE categoria = ? GROUP BY produto_id ORDER BY acessos DESC LIMIT ".$limite." ");
         $sql->execute(array($id_categoria));
         return $sql->fetchAll();
     }
 
-    public function getAcessosProduto($id_produto, $limite){
-        $sql = $this->db->prepare("SELECT *, count(ip) as repeticoes FROM acessos_produtos WHERE produto_id = ? GROUP BY ip LIMIT ".$limite." ");
+    public function getAcessosProduto($id_produto){
+        $sql = $this->db->prepare("SELECT produto_id, ip, count(ip) as repeticoes FROM acessos_produtos WHERE produto_id = ? GROUP BY ip");
         $sql->execute(array($id_produto));
         return $sql->fetchAll();
     }

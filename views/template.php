@@ -28,6 +28,15 @@ Criado por : Samuel Rocha Costa | email: samu.rcosta@gmail.com
         <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/tether.min.js"></script>
         <script type="text/javascript">var BASE_URL = '<?php echo BASE_URL;?>'</script>
         <link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148041203-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-148041203-1');
+        </script>
     </head>
     <body>
         <div class="topo-topo">
@@ -110,6 +119,5 @@ Criado por : Samuel Rocha Costa | email: samu.rcosta@gmail.com
         <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/canvas-to-blob.min.js"></script>
         <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/resize.js"></script>
         <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/script.js"></script>
-
     </body>
 </html>

@@ -131,6 +131,6 @@
     $("#share").jsSocials({
         showLabel: false,
         showCount: false,
-        shares: [twitter", "facebook", "whatsapp"]
+        shares: ["twitter", "facebook", "whatsapp"]
     });
 </script>
