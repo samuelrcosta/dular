@@ -246,6 +246,22 @@ input:focus {outline: 0}
     }
 }
 
+@media all and (max-width:768px){
+    .topo-topo{
+        height: auto;
+    }
+    .topo-topo-right{
+        float: none;
+        text-align: center;
+    }
+}
+
+@media all and (max-width:500px){
+    .topo-topo{
+        display: none;
+    }
+}
+
 @media all and (max-width:400px) {
     .footer iframe{
         width: 240px;

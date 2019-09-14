@@ -25,7 +25,7 @@ Criado por : Samuel Rocha Costa | email: samu.rcosta@gmail.com
         <link rel="shortcut icon" href="<?php echo BASE_URL;?>/assets/imgs/favicon.ico" />
         <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/jquery-3.2.1.min.js"></script>
         <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>/assets/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>/assets/css/style-template.css?v=1.1">
+        <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>/assets/css/style-template.css?v=1.2">
         <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/tether.min.js"></script>
         <script type="text/javascript">var BASE_URL = '<?php echo BASE_URL;?>'</script>
         <link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
