@@ -200,6 +200,7 @@ input:focus {outline: 0}
 }
 
 .wppMobileBlock{
+    z-index: 10000;
     width: 60px;
     height: 60px;
     position: fixed;
