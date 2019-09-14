@@ -434,7 +434,7 @@ function addFixedBottomContactBar(){
     `;
     if(window.innerWidth >= 992){
         $('body').append(desktop);
-        $('body').css('padding-bottom', `${$('.directWppBlock').innerHeight()}px`);
+        $('.footer').css('padding-bottom', `${$('.directWppBlock').innerHeight()}px`);
     }else{
         $('body').append(mobile);
     }
