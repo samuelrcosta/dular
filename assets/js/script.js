@@ -8,6 +8,8 @@ window.onload = function () {
     }else{
         $("#0").addClass('dis_filtro_ativo');
     }
+
+    addFixedBottomContactBar();
 }
 
 
@@ -390,4 +392,50 @@ function validaCPF(strCPF) {
     if ((Resto == 10) || (Resto == 11))  Resto = 0;
     if (Resto != parseInt(strCPF.substring(10, 11) ) ) return false;
     return true;
+}
+
+function addFixedBottomContactBar(){
+    let desktop = `
+        <div class="directWppBlock">
+              <div class="container">
+                    <div class="row">
+                          <div class="col-md-6"> 
+                              <div class="directWppBlock__contacts">
+                                    <div class="item item--phone">
+                                        <a href="tel:+55623514-5771">
+                                            <div class="img"></div>
+                                            <div class="titulo">Atendimento<br>
+                                                <div class="numero">(62) 3514-5771</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="item item--whatsapp">
+                                        <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5562984845771" target="_blank">
+                                            <div class="img"></div>
+                                            <div class="titulo">Whatsapp<br>
+                                                <div class="numero">(62) 98484-5771</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="col-md-6">
+                              <div class="directWppBlock__buttons">
+                                <a class="dtc-button" href="https://api.whatsapp.com/send?1=pt_BR&phone=5562984845771" target="_blank">Fale Agora</a>
+                                <a class="dtc-button" href="${BASE_URL}/revendedor">Seja um Revendedor</a>
+                              </div>
+                        </div>
+                    </div>
+              </div>
+        </div>
+    `;
+    let mobile = `
+        <div class="wppMobileBlock"><a href="https://api.whatsapp.com/send?1=pt_BR&phone=5562984845771" target="_blank"></a></div>
+    `;
+    if(window.innerWidth >= 992){
+        $('body').append(desktop);
+        $('body').css('padding-bottom', `${$('.directWppBlock').innerHeight()}px`);
+    }else{
+        $('body').append(mobile);
+    }
 }

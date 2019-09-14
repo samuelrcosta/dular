@@ -18,6 +18,14 @@ input:focus {outline: 0}
     font-weight: 600;
 }
 
+.topo-topo-right a{
+    color: black;
+}
+.topo-topo-right a:hover, .topo-topo-right a:active{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 .fixed-top {
     top: 35px;
 }
@@ -106,6 +114,109 @@ input:focus {outline: 0}
     line-height: 18px;
     margin-top: 5px;
     display: block;
+}
+
+.directWppBlock{
+    position: fixed;
+    bottom: 0;
+    background-color: #292b2c;
+    color: #fff;
+    padding: 20px 0;
+    width: 100%;
+    z-index: 10000;
+    text-align: center;
+    border-top: solid 2px #FDF21C;
+}
+.directWppBlock__contacts{
+    display: flex;
+}
+.directWppBlock__contacts .item a{
+    margin: 0;
+}
+.directWppBlock__contacts .item a .img{
+    height: 35px;
+    width: 35px;
+    float: left;
+    margin-right: 5px;
+    margin-top: 8px;
+}
+.directWppBlock__contacts .item:last-child{
+    margin-left: 25px;
+}
+.directWppBlock__contacts .item--phone a .img{
+    background: url('../imgs/telefone-w.png') center no-repeat;
+}
+.directWppBlock__contacts .item--whatsapp a .img{
+    background: url('../imgs/whatsapp-w.png') center no-repeat;
+}
+.directWppBlock__contacts .item .titulo{
+    float: left;
+    text-transform: uppercase;
+    font-size: .688em;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    padding-top: 7px;
+    text-align: left;
+}
+.directWppBlock__contacts .item .titulo .numero{
+    float: left;
+    font-size: 17px;
+    color: #fff;
+    font-weight: 800;
+}
+.directWppBlock__buttons{
+    display: flex;
+    justify-content: flex-end;
+}
+.directWppBlock__buttons a.dtc-button{
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 13px;
+    display: inline-block;
+    border-radius: 0px;
+    color: #fff;
+    text-align: left;
+    letter-spacing: 0.8px;
+    padding-right: 50px;
+    border: 2px solid #fff;
+    text-decoration: none;
+    margin: 0;
+}
+.directWppBlock__buttons a.dtc-button:hover{
+    font-weight: bold;
+}
+.directWppBlock__buttons a.dtc-button:first-child{
+    background: url('../imgs/whatsapp-w.png') right no-repeat;
+    background-size: 20px;
+    background-position: 105px;
+}
+.directWppBlock__buttons a.dtc-button:last-child{
+    margin-left: 1rem;
+    background: url('../imgs/cash-w.png') right no-repeat #FF2A00;
+    background-size: 20px;
+    background-position: 160px;
+    border-color: #FF2A00;
+}
+
+.wppMobileBlock{
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    background-color: #25d366;
+    bottom: 15px;
+    right: 15px;
+    border-radius: 30px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.wppMobileBlock:active{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.wppMobileBlock a{
+    background: url('../imgs/whatsapp-w.png') center no-repeat;
+    margin: 0!important;
+    display: block;
+    height: 100%;
 }
 
 @media all and (max-width:1200px) {
