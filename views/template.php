@@ -25,7 +25,7 @@ Criado por : Samuel Rocha Costa | email: samu.rcosta@gmail.com
         <link rel="shortcut icon" href="<?php echo BASE_URL;?>/assets/imgs/favicon.ico" />
         <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/jquery-3.2.1.min.js"></script>
         <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>/assets/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>/assets/css/style-template.css?v=1.2">
+        <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>/assets/css/style-template.css?v=1.3">
         <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/tether.min.js"></script>
         <script type="text/javascript">var BASE_URL = '<?php echo BASE_URL;?>'</script>
         <link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
@@ -101,12 +101,10 @@ Criado por : Samuel Rocha Costa | email: samu.rcosta@gmail.com
                                 </div>
                                 <h5 class="area-titulo-texto">Atendimento</h5>
                                 <div class="area-descricao">
-                                    <p>Segunda a sexta das 14h às 18h</p>
+                                    <p>Segunda a sexta das 07:30 às 11:30 / 13:30 às 17:30</p>
+                                    <p>Sábado das 08:00 às 12:00</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="area-contato-box" style="margin-top: 30px">
-                            <img width="100" style="float: right" src="<?php echo BASE_URL;?>/assets/imgs/ssl.png" alt="SSL Security logo">
                         </div>
                     </div>
                 </div>
@@ -118,7 +116,7 @@ Criado por : Samuel Rocha Costa | email: samu.rcosta@gmail.com
         </div>
         <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/canvas-to-blob.min.js"></script>
-        <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/resize.js"></script>
-        <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/script.js?v=1.1"></script>
+        <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/resize.min.js"></script>
+        <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/script.min.js?v=1.2"></script>
     </body>
 </html>

@@ -10,6 +10,10 @@ window.onload = function () {
     }
 
     addFixedBottomContactBar();
+
+    setTimeout(function(){
+      showDealerHighlight();
+    }, 3000);
 }
 
 
@@ -438,4 +442,96 @@ function addFixedBottomContactBar(){
     }else{
         $('body').append(mobile);
     }
+}
+
+function getTimestamp(){
+  return Math.floor(Date.now() / 1000);
+}
+
+function showDealerHighlight(){
+  let history = localStorage.getItem('popIat');
+  if((history && getTimestamp() >= history) || history == null){
+    let desktop = `
+    <div class="dealerPopContainer">
+      <div class="modal fade dealerPopContainer" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="dealerPopContainer__diagonalStyle"></div>
+            <div class="right-content">
+              <h2>Seja um Revendedor DuLar</h2>
+              <div class="dealer_adv">
+                <ul>
+                  <li>Lucros de até 100%</li>
+                  <li>Baixo investimento inicial</li>
+                </ul>
+              </div>
+              <a href="${BASE_URL}/revendedor" class="dealer_contact">Ver todas as vantangens</a>
+              <div class="dealer_contacts">
+                <ul>
+                  <li><a href="https://www.facebook.com/jorliane/" target="_blank"></a></li>
+                  <li><a href="https://www.instagram.com/Enxovais_Dular/" target="_blank"></a></li>
+                  <li><a href="https://api.whatsapp.com/send?1=pt_BR&phone=5562984845771" target="_blank"></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="left-content">
+              <img class="dealer_logomarca" src="${BASE_URL}/assets/imgs/logo-white.png" />
+              <div class="dealer_addr">
+                Av. Bernardo Sayão Qd 01 Lt. 19<br/>
+                Residencial Tereza Lima<br/>
+                Inhumas - GO<br/>
+              </div>
+              <div class="dealer_contacts">
+                <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5562984845771" target="_blank">Falar Agora</a>
+                <a href="https://www.google.com/maps/place/Av.+Bernardo+Say%C3%A3o,+604,+Inhumas+-+GO,+75400-000/@-16.349532,-49.51099,16z/data=!4m5!3m4!1s0x935dd7e1d7521103:0x1644e2e377076424!8m2!3d-16.3495321!4d-49.5109904?hl=pt-BR" target="_blank">Localização da Fábrica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+    let mobile = `
+        <div class="modal fade dealerPopContainerMobile" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="dealerPopContainer__diagonalStyle"></div>
+            <div class="inner-content">
+              <h2>Seja um Revendedor DuLar</h2>
+              <div class="dealer_adv">
+                <ul>
+                  <li>Lucros de até 100%</li>
+                  <li>Baixo investimento inicial</li>
+                </ul>
+              </div>
+              <a href="${BASE_URL}/revendedor" class="dealer_contact">Ver todas as vantangens</a>
+              <div class="dealer_contacts">
+                <ul>
+                  <li><a href="https://www.facebook.com/jorliane/" target="_blank"></a></li>
+                  <li><a href="https://www.instagram.com/Enxovais_Dular/" target="_blank"></a></li>
+                  <li><a href="https://api.whatsapp.com/send?1=pt_BR&phone=5562984845771" target="_blank"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    if(window.innerWidth >= 992){
+        $('body').append(desktop);
+        $('.dealerPopContainer').modal();
+        $('.dealerPopContainer').on('hide.bs.modal', function(){
+        $('.modal-backdrop').remove();
+        });
+        localStorage.setItem('popIat', getTimestamp() + (5 * 60));
+    }else{
+        $('body').append(mobile);
+        $('.dealerPopContainerMobile').modal();
+        $('.dealerPopContainerMobile').on('hide.bs.modal', function(){
+            $('.modal-backdrop').remove();
+        });
+    }
+  }
 }

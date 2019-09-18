@@ -35,7 +35,7 @@ input:focus {outline: 0}
     width: 100%;
     position: absolute;
     border-bottom: solid 1px #FDF21C;
-    z-index: 10000;
+    z-index: 100;
 }
 
 #retorno{
@@ -123,7 +123,7 @@ input:focus {outline: 0}
     color: #fff;
     padding: 20px 0;
     width: 100%;
-    z-index: 10000;
+    z-index: 100;
     text-align: center;
     border-top: solid 2px #FDF21C;
 }
@@ -200,7 +200,7 @@ input:focus {outline: 0}
 }
 
 .wppMobileBlock{
-    z-index: 10000;
+    z-index: 100;
     width: 60px;
     height: 60px;
     position: fixed;
@@ -218,6 +218,260 @@ input:focus {outline: 0}
     margin: 0!important;
     display: block;
     height: 100%;
+}
+
+.modal-backdrop.show {
+    opacity: .7;
+}
+.dealerPopContainer .modal-dialog{
+    max-width: 900px;
+}
+.dealerPopContainer .modal-content{
+    background-image: url('../imgs/example.jpg');
+    background-position: left bottom;
+    border: 0;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.dealerPopContainer__diagonalStyle{
+    position: absolute;
+    background-color: #292b2c;
+    width: 840px;
+    left: 0;
+    bottom: 0;
+    height: 430px;
+    margin-bottom: -240px;
+    transform: skewY(30deg);
+    border-top: solid 2px #FDF21C;
+}
+
+.dealerPopContainer .modal-content .right-content{
+    padding: 40px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.dealerPopContainer .modal-content .right-content h2{
+    font-size: 40px;
+    font-family: Hind;
+    display: block;
+    border-bottom: 5px solid #FDF21C;
+    padding-bottom: 5px;
+    color: #FDF21C;
+    text-transform: uppercase;
+}
+
+.dealerPopContainer .modal-content .right-content .dealer_adv ul{
+    list-style: none;
+    font-size: 20px;
+    font-weight: 200;
+}
+.dealerPopContainer .modal-content .right-content .dealer_adv ul li{
+    margin-top: 20px;
+    text-align: right;
+    padding: 10px;
+}
+.dealerPopContainer .modal-content .right-content .dealer_contact{
+    padding: 20px;
+    margin: 15px 0 50px;
+    border: 2px solid #fff;
+    background-color: rgba(0,0,0,0.5);
+    text-transform: uppercase;
+    display: block;
+    transition: linear all 0.3s;
+}
+.dealerPopContainer .modal-content .right-content .dealer_contact:hover{
+    background-color: #292b2c;
+    border-color: #FDF21C;
+    color: #FDF21C;
+    text-decoration: none;
+}
+
+.dealerPopContainer .modal-content .right-content .dealer_contacts ul{
+    list-style: none;
+    margin-right: 20px;
+}
+.dealerPopContainer .modal-content .right-content .dealer_contacts ul li{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-left: 5px;
+}
+.dealerPopContainer .modal-content .right-content .dealer_contacts ul li a{
+    display: block;
+    margin: 0;
+    width: 32px;
+    height: 32px;
+}
+.dealerPopContainer .modal-content .right-content .dealer_contacts ul li:nth-child(1) a{
+    background-image: url('../imgs/facebook-w.png');
+}
+.dealerPopContainer .modal-content .right-content .dealer_contacts ul li:nth-child(2) a{
+    background-image: url('../imgs/instagram-w.png');
+}
+.dealerPopContainer .modal-content .right-content .dealer_contacts ul li:nth-child(3) a{
+    background-image: url('../imgs/whatsapp-w.png');
+}
+
+.dealerPopContainer .modal-content .left-content{
+    position: absolute;
+    left: 0;
+    top: 145px;
+    padding: 40px;
+}
+
+.dealerPopContainer .modal-content .left-content .dealer_logomarca{
+    width: 250px;
+    margin-left: -30px;
+    margin-top: -15px;
+}
+
+.dealerPopContainer .modal-content .left-content .dealer_addr{
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.dealerPopContainer .modal-content .left-content .dealer_contacts{
+    margin-top: 10px;
+    display: flex;
+}
+.dealerPopContainer .modal-content .left-content .dealer_contacts a{
+    display: block;
+}
+.dealerPopContainer .modal-content .left-content .dealer_contacts a:nth-child(1){
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 13px;
+    display: inline-block;
+    border-radius: 0px;
+    color: #fff;
+    text-align: left;
+    letter-spacing: 0.8px;
+    padding-right: 50px;
+    border: 2px solid #25d366;
+    text-decoration: none;
+    margin: 0;
+    background: url('../imgs/whatsapp-w.png') right no-repeat;
+    background-color: #25d366;
+    background-size: 20px;
+    background-position: 105px;
+}
+.dealerPopContainer .modal-content .left-content .dealer_contacts a:nth-child(2) {
+    margin: 0 0 0 20px;
+    display: flex;
+    align-items: flex-end;
+    text-decoration: underline;
+}
+
+.dealerPopContainerMobile.show{
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+}
+.dealerPopContainerMobile .modal-dialog{
+    margin: 20px;
+}
+.dealerPopContainerMobile .modal-content{
+    background-image: url('../imgs/example.jpg');
+    background-position: center;
+    background-size: cover;
+    border: 0;
+    border-radius: 0;
+    overflow: hidden;
+}
+.dealerPopContainerMobile .modal-content .close{
+    display: block;
+    position: absolute;
+    text-shadow: 0 0 0 #FFF;
+    opacity: 0.7;
+    color: #FFFF;
+    right: 17px;
+    top: 10px;
+}
+.dealerPopContainerMobile .inner-content{
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px;
+}
+.dealerPopContainerMobile .inner-content h2{
+    font-family: Hind;
+    font-size: 26px;
+    text-align: center;
+    margin-left: -5px;
+    margin-right: -5px;
+    color: #FDF21C;
+    text-transform: uppercase;
+}
+.dealerPopContainerMobile .inner-content .dealer_adv ul {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    list-style: none;
+}
+.dealerPopContainerMobile .inner-content .dealer_adv ul li{
+    margin: 35px 10px;
+    text-align: center;
+}
+.dealerPopContainerMobile .inner-content .dealer_contact {
+    padding: 20px;
+    background-color: #292b2c;
+    color: #FDF21C;
+    text-decoration: none;
+    margin: 20px 0 40px;
+    border: 2px solid #FDF21C;
+    display: block;
+    text-transform: uppercase;
+    font-size: 15px;
+    text-align: center;
+}
+.dealerPopContainerMobile .inner-content .dealer_contacts{
+    display: flex;
+}
+.dealerPopContainerMobile .inner-content .dealer_contacts ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.dealerPopContainerMobile .inner-content .dealer_contacts ul li{
+    display: inline-block;
+    margin-left: 5px;
+}
+.dealerPopContainerMobile .inner-content .dealer_contacts ul li a{
+    display: block;
+    margin: 0;
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+}
+.dealerPopContainerMobile .inner-content .dealer_contacts ul li:nth-child(1) a{
+    background-image: url('../imgs/facebook-w.png');
+}
+.dealerPopContainerMobile .inner-content .dealer_contacts ul li:nth-child(2) a{
+    background-image: url('../imgs/instagram-w.png');
+}
+.dealerPopContainerMobile .inner-content .dealer_contacts ul li:nth-child(3) a{
+    background-image: url('../imgs/whatsapp-w.png');
+}
+.dealerPopContainerMobile .inner-content .dealer_contacts ul li:nth-child(4) a{
+    background-image: url('../imgs/location-w.png');
+}
+
+.dealerPopContainerMobile .inner-content .dealer_contacts div{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.dealerPopContainerMobile .inner-content .dealer_contacts div img {
+    width: 115px;
 }
 
 @media all and (max-width:1200px) {
