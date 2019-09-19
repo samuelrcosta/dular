@@ -117,6 +117,6 @@ Criado por : Samuel Rocha Costa | email: samu.rcosta@gmail.com
         <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/canvas-to-blob.min.js"></script>
         <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/resize.min.js"></script>
-        <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/script.min.js?v=1.2"></script>
+        <script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/script.min.js?v=1.3"></script>
     </body>
 </html>

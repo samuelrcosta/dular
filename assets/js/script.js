@@ -12,8 +12,8 @@ window.onload = function () {
     addFixedBottomContactBar();
 
     setTimeout(function(){
-      showDealerHighlight();
-    }, 3000);
+        showDealerHighlight();
+    }, 1500);
 }
 
 
@@ -286,13 +286,13 @@ function redimensionar()
             // Apenas para evitar sobrecarga de requisições
             // e ficar visualmente melhor o progresso
             complete:
-                if(get_retorno == "1") {
-                    setTimeout(function () {
-                        // Passa para a próxima imagem
-                        imagem_atual++;
-                        redimensionar();
-                    }, 1000);
-                }
+              if(get_retorno == "1") {
+                  setTimeout(function () {
+                      // Passa para a próxima imagem
+                      imagem_atual++;
+                      redimensionar();
+                  }, 1000);
+              }
         });
 
     });
@@ -362,14 +362,14 @@ function validaEmail(text) {
     dominio = text.substring(text.indexOf("@")+ 1, text.length);
 
     if ((usuario.length >=1) &&
-        (dominio.length >=3) &&
-        (usuario.search("@")==-1) &&
-        (dominio.search("@")==-1) &&
-        (usuario.search(" ")==-1) &&
-        (dominio.search(" ")==-1) &&
-        (dominio.search(".")!=-1) &&
-        (dominio.indexOf(".") >=1)&&
-        (dominio.lastIndexOf(".") < dominio.length - 1)) {
+      (dominio.length >=3) &&
+      (usuario.search("@")==-1) &&
+      (dominio.search("@")==-1) &&
+      (usuario.search(" ")==-1) &&
+      (dominio.search(" ")==-1) &&
+      (dominio.search(".")!=-1) &&
+      (dominio.indexOf(".") >=1)&&
+      (dominio.lastIndexOf(".") < dominio.length - 1)) {
         return 0;
     }
     else{
@@ -445,13 +445,13 @@ function addFixedBottomContactBar(){
 }
 
 function getTimestamp(){
-  return Math.floor(Date.now() / 1000);
+    return Math.floor(Date.now() / 1000);
 }
 
 function showDealerHighlight(){
-  let history = localStorage.getItem('popIat');
-  if((history && getTimestamp() >= history) || history == null){
-    let desktop = `
+    let history = localStorage.getItem('popIat');
+    if((history && getTimestamp() >= history) || history == null){
+        let desktop = `
     <div class="dealerPopContainer">
       <div class="modal fade dealerPopContainer" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
@@ -492,11 +492,13 @@ function showDealerHighlight(){
     </div>
   `;
 
-    let mobile = `
+        let mobile = `
         <div class="modal fade dealerPopContainerMobile" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="dealerPopContainer__diagonalStyle"></div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
             <div class="inner-content">
               <h2>Seja um Revendedor DuLar</h2>
               <div class="dealer_adv">
@@ -511,7 +513,11 @@ function showDealerHighlight(){
                   <li><a href="https://www.facebook.com/jorliane/" target="_blank"></a></li>
                   <li><a href="https://www.instagram.com/Enxovais_Dular/" target="_blank"></a></li>
                   <li><a href="https://api.whatsapp.com/send?1=pt_BR&phone=5562984845771" target="_blank"></a></li>
+                  <li><a href="https://www.google.com/maps/place/Av.+Bernardo+Say%C3%A3o,+604,+Inhumas+-+GO,+75400-000/@-16.349532,-49.51099,16z/data=!4m5!3m4!1s0x935dd7e1d7521103:0x1644e2e377076424!8m2!3d-16.3495321!4d-49.5109904?hl=pt-BR" target="_blank"></a></li>
                 </ul>
+                <div>
+                  <img class="dealer_logomarca" src="${BASE_URL}/assets/imgs/logo-white.png" />
+                </div>
               </div>
             </div>
           </div>
@@ -519,19 +525,19 @@ function showDealerHighlight(){
       </div>
     `;
 
-    if(window.innerWidth >= 992){
-        $('body').append(desktop);
-        $('.dealerPopContainer').modal();
-        $('.dealerPopContainer').on('hide.bs.modal', function(){
-        $('.modal-backdrop').remove();
-        });
-        localStorage.setItem('popIat', getTimestamp() + (5 * 60));
-    }else{
-        $('body').append(mobile);
-        $('.dealerPopContainerMobile').modal();
-        $('.dealerPopContainerMobile').on('hide.bs.modal', function(){
-            $('.modal-backdrop').remove();
-        });
+        if(window.innerWidth >= 992){
+            $('body').append(desktop);
+            $('.dealerPopContainer').modal();
+            $('.dealerPopContainer').on('hide.bs.modal', function(){
+                $('.modal-backdrop').remove();
+            });
+            localStorage.setItem('popIat', getTimestamp() + (5 * 60));
+        }else{
+            $('body').append(mobile);
+            $('.dealerPopContainerMobile').modal();
+            $('.dealerPopContainerMobile').on('hide.bs.modal', function(){
+                $('.modal-backdrop').remove();
+            });
+        }
     }
-  }
 }
