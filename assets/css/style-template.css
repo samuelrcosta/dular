@@ -221,10 +221,17 @@ input:focus {outline: 0}
 }
 
 .modal-backdrop.show {
-    opacity: .7;
+    opacity: .0;
+}
+.modal.dealerPopContainer.show{
+    display: flex!important;
+    align-items: center;
+    justify-content: center;
 }
 .dealerPopContainer .modal-dialog{
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     max-width: 900px;
+    flex: 1;
 }
 .dealerPopContainer .modal-content{
     background-image: url('../imgs/example.jpg');
@@ -375,6 +382,7 @@ input:focus {outline: 0}
 }
 .dealerPopContainerMobile .modal-dialog{
     margin: 20px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 .dealerPopContainerMobile .modal-content{
     background-image: url('../imgs/example.jpg');
