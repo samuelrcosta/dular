@@ -1,6 +1,6 @@
 <?php
-require 'PHPMailer-master/PHPMailerAutoload.php';
-
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 class Orcamentos extends model{
     public function getOrcamentos($pagina, $limite){
         $p = ($pagina - 1) * $limite;
@@ -247,7 +247,7 @@ class Orcamentos extends model{
     }
 
     public function enviarEmailComTemplate($destnome, $destemail, $assunto, $mensagem){
-        $mail= new PhpMailer;
+	    $mail= new PHPMailer(true);
         $mail->IsSMTP();
         $mail->Host = $this->MailHost;
         // Enable this option to see deep debug info
@@ -696,7 +696,7 @@ class Orcamentos extends model{
     }
 
     public function enviarEmailComTemplate2($destnome, $destemail, $assunto, $mensagem){
-        $mail= new PhpMailer;
+	    $mail= new PHPMailer(true);
         $mail->IsSMTP();
         $mail->Host = $this->MailHost;
         // Enable this option to see deep debug info
@@ -1122,7 +1122,7 @@ class Orcamentos extends model{
 
     public function enviarEmailComTemplate2Anexo($id, $destnome, $destemail, $assunto, $mensagem){
         $dados = $this->getOrcamento($id);
-        $mail= new PhpMailer;
+	    $mail= new PHPMailer(true);
         $mail->IsSMTP();
         $mail->Host = $this->MailHost;
         // Enable this option to see deep debug info
@@ -1628,7 +1628,7 @@ class Orcamentos extends model{
 // SEUS DADOS
         $dadosboleto["identificacao"] = "Enxovais Dular Eireli-ME";
         $dadosboleto["cpf_cnpj"] = "28.144.993/0001-94";
-        $dadosboleto["endereco"] = "CAv. Bernardo Sayão Qd 01 Lt. 19, Residencial Tereza Lima";
+        $dadosboleto["endereco"] = "Av. Bernardo Sayão Qd 01 Lt. 19, Residencial Tereza Lima";
         $dadosboleto["cidade_uf"] = "Inhumas - GO";
         $dadosboleto["cedente"] = "Enxovais Dular";
         include("include/funcoes_itau.php");
